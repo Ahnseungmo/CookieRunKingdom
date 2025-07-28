@@ -1,0 +1,3 @@
+﻿key,type,name,hp,attack,deffen,critical,speed
+1001,1,Ninja,100,50,30,0,50
+2001,2,Monster,100,20,30,0,100

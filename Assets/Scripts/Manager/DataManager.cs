@@ -17,16 +17,12 @@ public struct CookieData
     public int Key;
     public int Type;
     public string Name;
+    public int Level;
     public float Hp;
-    public float Attack;
-    public float Defense;
-    public float Critical;
     public float LevelPerHp;
     public float LevelPerAttack;
     public float LevelPerDefense;
     public float LevelPerCritical;
-
-    public float Speed;
 
 }
 
@@ -52,6 +48,7 @@ public struct StageData
 public class DataManager : Singleton<DataManager>
 {
     private Dictionary<int, CharacterData> _characterDatas = new Dictionary<int, CharacterData>();
+    private Dictionary<int, CookieData> _cookieDatas = new Dictionary<int, CookieData>();
 
     //캐릭터 구현필요
 
@@ -79,13 +76,92 @@ public class DataManager : Singleton<DataManager>
 
         return default(StageData);
     }
+    public CharacterData GetCharacterData(int key)
+    {
+        if( _characterDatas.TryGetValue(key,out CharacterData data))
+        {
+            return data;
+        }
+        return default(CharacterData);
+    }
+    public CookieData GetCookieData(int key)
+    {
+        if(_cookieDatas.TryGetValue(key,out CookieData data))
+        {
+            return data;
+        }
+        return default(CookieData);
+    }
 
     public void LoadAllData()
     {
         LoadWorldData();
         LoadStageData();
+        LoadCookieData();
+        LoadCharacterData();
     }
 
+    private void LoadCharacterData()
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>("Tables/CharacterTable");
+
+        if (textAsset == null)
+        {
+            Debug.LogError("WorldTable not found in Resources/Tables.");
+            return;
+        }
+        string[] lines = textAsset.text.Split("\r\n");
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] datas = lines[i].Split(',');
+
+            CharacterData data;
+            data.Key = int.Parse(datas[0]);
+            data.Type = int.Parse(datas[1]);
+            data.Name = datas[2];
+            data.Hp = float.Parse(datas[3]);
+            data.Attack = float.Parse(datas[4]);
+            data.Defense = float.Parse(datas[5]);
+            data.Critical = float.Parse(datas[6]);
+            data.Speed = float.Parse(datas[7]);
+
+
+            _characterDatas.Add(data.Key, data);
+        }
+    }
+    private void LoadCookieData()
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>("Tables/CookieTable");
+
+        if (textAsset == null)
+        {
+            Debug.LogError("WorldTable not found in Resources/Tables.");
+            return;
+        }
+        string[] lines = textAsset.text.Split("\r\n");
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] datas = lines[i].Split(',');
+
+            CookieData data;
+            data.Key = int.Parse(datas[0]);
+            data.Type = int.Parse(datas[1]);
+            data.Name = datas[2];
+            data.Level = int.Parse(datas[3]);
+            data.Hp = float.Parse(datas[4]);
+
+            data.LevelPerHp = float.Parse(datas[5]);
+            data.LevelPerAttack = float.Parse(datas[6]);
+            data.LevelPerDefense = float.Parse(datas[7]);
+            data.LevelPerCritical = float.Parse(datas[8]);
+            
+
+
+            _cookieDatas.Add(data.Key, data);
+        }
+    }
     private void LoadWorldData()
     {
         TextAsset textAsset = Resources.Load<TextAsset>("Tables/WorldTable");
