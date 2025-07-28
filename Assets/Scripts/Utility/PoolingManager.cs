@@ -46,6 +46,21 @@ public class PoolingManager
         }
     }
 
+    public PoolingManager(string prefabPath, GameObject parent, int poolSize = DefaultPoolSize) //Ãß°¡ÇÔ
+    {
+        GameObject prefab = Resources.Load<GameObject>(prefabPath);
+
+
+        _pooledObjects = new List<GameObject>(poolSize);
+
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject obj = Object.Instantiate(prefab, parent.transform);
+            obj.SetActive(false);
+            _pooledObjects.Add(obj);
+        }
+    }
+
     public void AddComponent<T>() where T : Component
     {
         foreach (GameObject obj in _pooledObjects)
