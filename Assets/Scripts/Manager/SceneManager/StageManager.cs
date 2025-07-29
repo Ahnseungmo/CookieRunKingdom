@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class StageManager: MonoBehaviour
 {
-    WorldData _worldData;
+    private WorldData _worldData;
     private PoolingManager _stageButtons;
-    GameObject _buttonParent;
+    private GameObject _buttonParent;
 
     private void Start()
     {
-        Init(100);
+        Init(100); // 이거 값 넘겨줘야되는디
     }
     private void Init(int stageNum)
     {
@@ -21,7 +21,7 @@ public class StageManager: MonoBehaviour
 
     private void CreateStageButtons()
     {
-        _stageButtons = new PoolingManager("Prefabs/StageButton", _buttonParent, 10);
+        _stageButtons = new PoolingManager("Prefabs/Buttons/StageButton", _buttonParent, 10);
 
         for(int i = 1; i <= _worldData.StageNum; i++)
         {

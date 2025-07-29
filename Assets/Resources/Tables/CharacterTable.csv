@@ -1,3 +1,6 @@
 ﻿key,type,name,hp,attack,deffen,critical,speed
-1001,1,Ninja,100,50,30,0,50
+1001,1,Normal,100,50,30,0,50
+1002,1,StrawBerry,100,50,50,0,50
+1003,1,Normal,100,50,10,0,50
+1004,1,StrawBerry,100,50,30,0,50
 2001,2,Monster,100,20,30,0,100
