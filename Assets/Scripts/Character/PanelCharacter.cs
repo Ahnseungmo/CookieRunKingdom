@@ -5,14 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Character : MonoBehaviour
+public class PanelCharacter : Character
 {
-    [SerializeField]
-    private CharState _state;
-    public CharState State { get { return _state; } set { _state = value; } }
-    [SerializeField]
-    private CharacterData _charData;
-    public CharacterData CharData { get { return _charData; } set { _charData = value; } }
 
     private void Awake()
     {
@@ -29,7 +23,19 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            CharacterData characterData = new CharacterData();
+            characterData.Key = 2;
+            CharData = characterData;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            CharacterData characterData = new CharacterData();
+            characterData.Key = 1;
+            CharData = characterData;
+        }
 
     }
 

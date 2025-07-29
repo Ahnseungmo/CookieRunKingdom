@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public struct CharacterData
 {
     public int Key;
@@ -43,6 +44,17 @@ public struct StageData
     public int Wave1;
     public int Wave2;
     public int Wave3;
+}
+
+public enum CharState
+{
+    Idle,
+    Move,
+    Attack,
+    Skill,
+    Idle_front,
+    Victory,
+    Lose
 }
 
 public class DataManager : Singleton<DataManager>
