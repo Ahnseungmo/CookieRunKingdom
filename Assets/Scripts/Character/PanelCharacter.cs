@@ -26,14 +26,14 @@ public class PanelCharacter : Character
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             CharacterData characterData = new CharacterData();
-            characterData.Key = 2;
+            characterData.Key = 1001;
             CharData = characterData;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             CharacterData characterData = new CharacterData();
-            characterData.Key = 1;
+            characterData.Key = 1002;
             CharData = characterData;
         }
 

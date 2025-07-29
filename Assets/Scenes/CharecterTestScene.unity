@@ -324,7 +324,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1001 &5496655257989599145
+--- !u!1001 &757628748
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -334,15 +334,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 39281861158189491, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: _state
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 39281861158189491, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: _charData.Key
-      value: 1
+      value: 1001
       objectReference: {fileID: 0}
     - target: {fileID: 3687985627661267154, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: m_Name
-      value: Character
+      value: PanelCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 8497240858444097305, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,5 +394,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 717977748}
-  - {fileID: 5496655257989599145}
   - {fileID: 28690062}
+  - {fileID: 757628748}

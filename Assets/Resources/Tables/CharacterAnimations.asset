@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: CharacterAnimations
   m_EditorClassIdentifier: 
   animationList:
-  - key: 1
+  - key: 1001
     skeletonDataAsset: {fileID: 11400000, guid: f47a014c9f4f4af42b9237caec4a4abf, type: 2}
-  - key: 2
-    skeletonDataAsset: {fileID: 11400000, guid: 6a5203d900ee26245a293c7347a21df7, type: 2}
-  - key: 3
+  - key: 1002
+    skeletonDataAsset: {fileID: 11400000, guid: a2d78c92c48a22e42957564eed42083c, type: 2}
+  - key: 1003
     skeletonDataAsset: {fileID: 11400000, guid: 5fb3f13d63881354d89f9ca1eb00dad4, type: 2}
-  - key: 4
-    skeletonDataAsset: {fileID: 11400000, guid: b3255952b55fcb448bc172c172827b1d, type: 2}
+  - key: 1004
+    skeletonDataAsset: {fileID: 11400000, guid: 7f63c316721cf8646ba9fea4d54a2c72, type: 2}
   - key: 5
     skeletonDataAsset: {fileID: 11400000, guid: cf1f7f327f7c3d44dad5b831bda01935, type: 2}

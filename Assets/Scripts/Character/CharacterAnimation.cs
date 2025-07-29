@@ -32,7 +32,7 @@ public class CharacterAnimation : MonoBehaviour
             animationKey.Add(CharState.Idle, "idle_back");
             animationKey.Add(CharState.Attack, "skill1_back");
             animationKey.Add(CharState.Move, "run_back");
-            animationKey.Add(CharState.Skill, "skill2_start_back");
+            animationKey.Add(CharState.Skill, "skill2_loop_back");
             animationKey.Add(CharState.Idle_front, "idle");
             animationKey.Add(CharState.Victory, "joy");
             animationKey.Add(CharState.Lose, "lose");
@@ -46,12 +46,15 @@ public class CharacterAnimation : MonoBehaviour
     {
         _character = GetComponent<Character>();
         key = _character.CharData.Key;
-        _skeletonDataAsset = characterAnimations.GetAnimation(key);
         print(key);
+
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
+
+
+        _skeletonDataAsset = characterAnimations.GetAnimation(key);
         _skeletonAnimation.skeletonDataAsset = _skeletonDataAsset;
-        state = _skeletonAnimation.AnimationState;
         _skeletonAnimation.Initialize(true);
+        state = _skeletonAnimation.AnimationState;
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,8 +71,9 @@ public class CharacterAnimation : MonoBehaviour
         if(key != _character.CharData.Key)
         {
             Init();
+            _charState = 0;
         }
-
+        print(_charState);
 
         if(_charState != _character.State)
         {
