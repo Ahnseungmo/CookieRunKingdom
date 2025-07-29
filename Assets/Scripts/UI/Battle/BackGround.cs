@@ -1,99 +1,57 @@
 using UnityEngine;
 
-public class Background : MonoBehaviour
+public class BackGround : MonoBehaviour
 {
-    public Camera cam;
-    public GameObject roadTile;         // 중앙 도로
-    public GameObject roadEdgeTile;     // 도로 경계(풀/그림자)
-    public GameObject grassTile;        // 숲/풀 타일
+    public Transform[] tilemaps;
+    public Camera mainCamera;
+    public float tileSizeX = 1f;
+    public float tileSizeY = 0.5f;
+    public int mapWidth = 86;
+    public float moveSpeed = 2f;
 
-    public Vector2Int tileCount = new Vector2Int(7, 7); // 더 넓게(홀수 추천)
-    public Vector2 tileSize;
-
-    private GameObject[,] tiles;
-    private Vector2Int centerIdx;
-    private Vector2Int lastCamTile;
+    private Vector3 moveDir;
+    private Vector3 loopOffset;
 
     void Start()
     {
-        // roadTile 기준으로 tileSize 자동 설정
-        if (roadTile != null)
-            tileSize = roadTile.GetComponent<SpriteRenderer>().bounds.size;
+        moveDir = new Vector3(tileSizeX, tileSizeY, 0).normalized;
+        loopOffset = new Vector3(tileSizeX * mapWidth, tileSizeY * mapWidth, 0);
 
-        centerIdx = new Vector2Int(tileCount.x / 2, tileCount.y / 2);
-        tiles = new GameObject[tileCount.x, tileCount.y];
+        tilemaps[0].position = Vector3.zero;
+        tilemaps[1].position = loopOffset;
 
-        for (int y = 0; y < tileCount.y; y++)
-        {
-            for (int x = 0; x < tileCount.x; x++)
-            {
-                int mapX = x - centerIdx.x;
-                int mapY = y - centerIdx.y;
-                GameObject prefab = GetTilePrefab(x, y);
-
-                tiles[x, y] = Instantiate(prefab, transform);
-                Vector3 pos = IsoTileToWorld(mapX, mapY);
-                tiles[x, y].transform.position = pos;
-            }
-        }
-
-        lastCamTile = GetCamTilePos(cam.transform.position);
-        UpdateTiles(cam.transform.position);
+        if (mainCamera != null)
+            mainCamera.transform.position = new Vector3(0, 0, mainCamera.transform.position.z);
     }
 
     void Update()
     {
-        Vector3 camPos = cam.transform.position;
-        Vector2Int camTile = GetCamTilePos(camPos);
+        Vector3 delta = moveDir * moveSpeed * Time.deltaTime;
 
-        if (camTile != lastCamTile)
+        // 카메라는 앞으로
+        if (mainCamera != null)
+            mainCamera.transform.position += new Vector3(delta.x, delta.y, 0);
+
+        // 배경은 뒤로
+        for (int i = 0; i < tilemaps.Length; i++)
+            tilemaps[i].position -= delta;
+
+        // 루프 체크 (정확한 공식!)
+        for (int i = 0; i < tilemaps.Length; i++)
         {
-            UpdateTiles(camPos);
-            lastCamTile = camTile;
-        }
-    }
+            Transform cur = tilemaps[i];
+            Transform other = tilemaps[(i + 1) % tilemaps.Length];
 
-    Vector2Int GetCamTilePos(Vector3 camPos)
-    {
-        int x = Mathf.FloorToInt(camPos.x / (tileSize.x / 2f));
-        int y = Mathf.FloorToInt(camPos.y / (tileSize.y / 2f));
-        return new Vector2Int(x, y);
-    }
+            // 카메라 기준 진행방향 "뒤(-moveDir)"로 loopOffset만큼 벗어났을 때만!
+            float distFromCam = Vector3.Dot(cur.position - mainCamera.transform.position, -moveDir);
 
-    void UpdateTiles(Vector3 camPos)
-    {
-        Vector2Int camTile = GetCamTilePos(camPos);
-
-        for (int y = 0; y < tileCount.y; y++)
-        {
-            for (int x = 0; x < tileCount.x; x++)
+            if (distFromCam > loopOffset.magnitude * 0.95f)
             {
-                int mapX = camTile.x + (x - centerIdx.x);
-                int mapY = camTile.y + (y - centerIdx.y);
-
-                Vector3 pos = IsoTileToWorld(mapX, mapY);
-                tiles[x, y].transform.position = pos;
+                // 다른 타일맵의 "앞쪽"으로 loopOffset만큼 이동
+                cur.position = other.position + loopOffset;
+                Debug.Log($"[Loop] Move tilemap {i} to {cur.position}");
             }
         }
     }
 
-    Vector3 IsoTileToWorld(int x, int y)
-    {
-        float wx = (x + y) * (tileSize.x / 2f);
-        float wy = (y - x) * (tileSize.y / 2f);
-        return new Vector3(wx, wy, 0);
-    }
-
-    // 도로 중앙 1줄 + 양옆 경계, 나머지 숲
-    GameObject GetTilePrefab(int x, int y)
-    {
-        // 중앙 1줄(예: 세로), 중앙 line을 roadTile로
-        if (x == centerIdx.x)
-            return roadTile;
-        // 중앙 양옆만 경계 풀 (필요시 더 넓게)
-        else if (Mathf.Abs(x - centerIdx.x) == 1)
-            return roadEdgeTile;
-        else
-            return grassTile;
-    }
 }
