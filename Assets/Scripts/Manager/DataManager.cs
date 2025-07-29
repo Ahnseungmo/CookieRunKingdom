@@ -136,7 +136,7 @@ public class DataManager : Singleton<DataManager>
         for (int i = 1; i < lines.Length; i++)
         {
             string[] datas = lines[i].Split(',');
-
+            if (datas.Length == 0) continue;
             CharacterData data;
             data.Key = int.Parse(datas[0]);
             data.Type = int.Parse(datas[1]);
@@ -165,7 +165,7 @@ public class DataManager : Singleton<DataManager>
         for (int i = 1; i < lines.Length; i++)
         {
             string[] datas = lines[i].Split(',');
-
+            if (datas.Length == 0) continue;
             CookieData data;
             data.Key = int.Parse(datas[0]);
             data.Type = int.Parse(datas[1]);
@@ -197,7 +197,7 @@ public class DataManager : Singleton<DataManager>
         for (int i = 1; i < lines.Length; i++)
         {
             string[] datas = lines[i].Split(',');
-
+            if (datas.Length == 0) continue;
             WorldData data;
             data.Key = int.Parse(datas[0]);
             data.World = int.Parse(datas[1]);
@@ -223,7 +223,7 @@ public class DataManager : Singleton<DataManager>
         for (int i = 1; i < lines.Length; i++)
         {
             string[] datas = lines[i].Split(',');
-
+            if (datas.Length == 0) continue;
             StageData data;
             data.Key = int.Parse(datas[0]);
             data.World = int.Parse(datas[1]);

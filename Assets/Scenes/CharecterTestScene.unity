@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 39281861158189491, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: _charData.Key
-      value: 1001
+      value: 1005
       objectReference: {fileID: 0}
     - target: {fileID: 3687985627661267154, guid: 0668c47d5beca4c4b84eb6a4a5d2145e, type: 3}
       propertyPath: m_Name
