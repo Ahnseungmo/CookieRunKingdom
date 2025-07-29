@@ -4,6 +4,12 @@ public class CookieChoiceButton : ParentButton
 {
     private int _key;
     private bool _isSet;
+
+    public bool IsSet
+    {
+        get { return _isSet; }
+        set { _isSet = value; }
+    }
     public int Key
     { get { return _key; } 
       set { _key = value; }

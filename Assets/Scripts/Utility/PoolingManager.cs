@@ -60,7 +60,6 @@ public class PoolingManager
             _pooledObjects.Add(obj);
         }
     }
-
     public void AddComponent<T>() where T : Component
     {
         foreach (GameObject obj in _pooledObjects)
@@ -81,6 +80,16 @@ public class PoolingManager
         popObject.SetActive(true);
 
         return popObject;
+    }
+    public List<GameObject> GetAllToActiveTrue()
+    {
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i < _pooledObjects.Count; i++)
+        {
+            if(_pooledObjects[i].activeSelf)
+                list.Add(_pooledObjects[i]);
+        }
+        return list;
     }
 
     public GameObject GetClosestObject(Vector2 pos)
