@@ -2,179 +2,173 @@
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class CharacterManager : Singleton<CharacterManager>
 {
     private List<int> _setCharacterList = new List<int>();
     private int _characterCount = 0;
-    private int[] _characterArr = new int[9];
+    private int[,] _characterArr = new int[3,3];
 
+    private int _characterTypeNum = 0;
     public List<int> Character
     { get { return _setCharacterList; } }
 
-    public void SetCharacter(int key)
+    public bool SetCharacter(int key)
     {
-        if (_characterCount == 5) return;
+        if (_characterCount == 5) return false;
         _characterCount++;
         CookieData cookie = DataManager.Instance.GetCookieData(key);
         
         switch (cookie.Type)
         {
             case 1: //전방
-                SettingPosition(1,key);
+                _characterTypeNum = 1;
+                SettingPosition(2,key);
                 break;
             case 2: //중앙
-                SettingPosition(2, key);
+                _characterTypeNum = 2;
+                SettingPosition(1, key);
                 break;
             case 3://후방
-                SettingPosition(3, key);
+                _characterTypeNum = 3;
+                SettingPosition(0, key);
                 break;
 
         }
 
-        for(int i=0;i<9;i++)
-        {
-            Debug.Log(_characterArr[i]);
-            if(i%3 == 2)
-                Debug.Log("---------------------");
-        }
-        Debug.Log("끝");
+        Debug.Log(_characterArr[0, 0] + "|" + _characterArr[0, 1] + "|" + _characterArr[0, 2]);
+        Debug.Log(_characterArr[1, 0] + "|" + _characterArr[1, 1] + "|" + _characterArr[1, 2]);
+        Debug.Log(_characterArr[2, 0] + "|" + _characterArr[2, 1] + "|" + _characterArr[2, 2]);
+        Debug.Log("---------------------------------------------------");
+        return true;
     }
-    //public void SetCharacter(int key)//이렇게 삽입하면 앞부터 채워진다 고민함 해보자
-    //{
-    //    bool isInsert = false;
-    //    CharacterData data = DataManager.Instance.GetCharacterData(key);
-    //    int count = -1;
-    //    foreach (int node in _setCharacterList)
-    //    {
-    //        count++;
-    //        CharacterData nodeData = DataManager.Instance.GetCharacterData(node);
-    //
-    //        if (data.Defense <= nodeData.Defense) continue;
-    //
-    //        _setCharacterList.Insert(count, key);
-    //        isInsert = true;
-    //        break;
-    //    }
-    //    if (!isInsert)
-    //        _setCharacterList.Add(key);
-    //
-    //    foreach (int i in _setCharacterList)
-    //    {
-    //        Debug.Log(i + "/" + DataManager.Instance.GetCharacterData(i).Defense);
-    //    }
-    //}
+
     public void SetOffCharacter(int key)
     {
         _characterCount--;
-        for(int i=0;i<9;i++)
-        {
-            if(_characterArr[i] == key)
-                _characterArr[i] = 0;
-            SetOffPosition(i);
-            return;
-        }
+        for (int y = 0; y < 3; y++)
+            for (int x = 0; x < 3; x++)
+                if (_characterArr[y, x] == key)
+                {
+                    _characterArr[y, x] = 0;
+                    SetOffPosition(y,x);
+                    //return;
+                }
 
-
+        Debug.Log(_characterArr[0, 0] + "|" + _characterArr[0, 1] + "|" + _characterArr[0, 2]);
+        Debug.Log(_characterArr[1, 0] + "|" + _characterArr[1, 1] + "|" + _characterArr[1, 2]);
+        Debug.Log(_characterArr[2, 0] + "|" + _characterArr[2, 1] + "|" + _characterArr[2, 2]);
+        Debug.Log("---------------------------------------------------");
     }
     public void ResetAll()
     {
-        for(int i=0;i<9;i++)
-        {
-            _characterArr[i] = 0;
-        }
+        for (int y = 0; y < 3; y++)
+            for (int x = 0; x < 3; x++)
+                _characterArr[y,x] = 0;
     }
 
-    private void SetOffPosition(int num)
+    private void SetOffPosition(int y,int x)
     {
-        if (num % 3 == 1) return;
-
-        if(num % 3 == 2)
+        if (y == 1) return;
+        else if(y == 2)
         {
-            _characterArr[num - 1] = _characterArr[num - 2];
-            _characterArr[num - 2] = 0;
+            _characterArr[1,x] = _characterArr[0, x];
+            _characterArr[0, x] = 0;
         }
         else
         {
-            _characterArr[num + 1] = _characterArr[num + 2];
-            _characterArr[num + 2] = 0;
+            _characterArr[1,x] = _characterArr[2, x];
+            _characterArr[2, x] = 0;
         }
     }
     private void SettingPosition(int num, int key)
     {
-        num = (num - 1)*3;
 
-        //3*3 배열이라 9 =>이거 상수로 빼자
-        if (_characterArr[num + 1] == 0)
+        if (_characterArr[1,num] == 0 && _characterArr[0,num] == 0)
         {
-            _characterArr[num + 1] = key;
+            _characterArr[1, num] = key;
             return;
         }
-
-        else if (_characterArr[num + 1] !=0)
+        else if (_characterArr[1, num]!=0)
         {
-            CharacterData originData = DataManager.Instance.GetCharacterData(num + 1);
+            CharacterData originData = DataManager.Instance.GetCharacterData(_characterArr[1, num]);
             CharacterData keyData = DataManager.Instance.GetCharacterData(key);
 
-            if(keyData.Defense>originData.Defense)
+            if (originData.Defense>keyData.Defense)
             {
-                _characterArr[num] = key;
-                _characterArr[num + 2] = _characterArr[num + 1];
-                _characterArr[num + 1] = 0;
+                _characterArr[0, num] = _characterArr[1, num];
+                _characterArr[1, num] = 0;
+                _characterArr[2, num] = key;
             }
             else
             {
-                _characterArr[num] = _characterArr[num + 1];
-                _characterArr[num + 1] = 0;
-                _characterArr[num + 2] = key;
+                _characterArr[0, num] = key;
+                _characterArr[2, num] = _characterArr[1, num];
+                _characterArr[1, num] = 0;
             }
             return;
         }
-        //num+2랑 비교후 key값 바꿔서 넘기기
 
-        //여기부터 코드 개 난잡해질것같아서 일단 보류. 예외처리 엄청 많이 필요하다. 
 
-        if (num!=6 && _characterArr[num+5] ==0)
+        if (num > 0 && _characterTypeNum != 3)
         {
-            CharacterData originData = DataManager.Instance.GetCharacterData(num + 2);
-            CharacterData keyData = DataManager.Instance.GetCharacterData(key);
-            int temp;
+            List<CharacterData> data = new List<CharacterData>();
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[0, num]));
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[2, num]));
+            data.Add(DataManager.Instance.GetCharacterData(key));
+            float min = data[2].Defense;
+            int temp = key;
 
-            if (keyData.Defense > originData.Defense)
+            if (data[0].Defense < min)
             {
-                temp = _characterArr[num + 2];
-                _characterArr[num + 2] = key;
-                num = num / 3;
+                min = data[0].Defense;
+                temp = _characterArr[0, num];
+                _characterArr[0, num] = key;
             }
-            else
-                temp = key;
+            else if (data[1].Defense < min)
+            {
+                min = data[1].Defense;
+
+                temp = _characterArr[2, num];
+                _characterArr[2, num] = key;
+                key = temp;
+            }
+
+            SettingPosition(num - 1, temp);
+            Debug.Log("1");
+            return;
+
+        }
+        else if (num < 2 && _characterTypeNum != 1)
+        {
+            Debug.Log("3");
+            List<CharacterData> data = new List<CharacterData>();
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[0, num]));
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[2, num]));
+            data.Add(DataManager.Instance.GetCharacterData(key));
+            float max = 0;
+            int temp = key;
+
+            if (data[0].Defense > max)
+            {
+                max = data[0].Defense;
+                temp = _characterArr[0, num];
+                _characterArr[0, num] = key;
+                key = temp;
+            }
+            else if (data[1].Defense > max)
+            {
+                max = data[1].Defense;
+
+                temp = _characterArr[2, num];
+                _characterArr[2, num] = key;
+                key = temp;
+            }
+
             SettingPosition(num + 1, temp);
             return;
         }
-            
-        else if(num!=0 && _characterArr[num-1] == 0)
-        {
-            CharacterData originData = DataManager.Instance.GetCharacterData(num);
-            CharacterData keyData = DataManager.Instance.GetCharacterData(key);
-            int temp;
-
-            if (keyData.Defense < originData.Defense)
-            {
-                temp = _characterArr[num];
-                _characterArr[num] = key;
-            }
-            else
-                temp = key;
-            SettingPosition(num + 1, temp);
-            return;
-        }
-
-        num /= 3;
-        // 다 찼을때 미는코드
-        if (num != 0)
-            SettingPosition(num - 1, key);
-        else if(num!=6)
-            SettingPosition(num + 1, key);
     }
 }

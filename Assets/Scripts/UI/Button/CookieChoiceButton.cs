@@ -4,6 +4,7 @@ public class CookieChoiceButton : ParentButton
 {
     private int _key;
     private bool _isSet;
+    private int _level;
 
     public bool IsSet
     {
@@ -11,13 +12,19 @@ public class CookieChoiceButton : ParentButton
         set { _isSet = value; }
     }
     public int Key
-    { get { return _key; } 
-      set { _key = value; }
+    {
+        get { return _key; } 
+        set { _key = value; }
+    }
+    public int Level
+    {
+        get { return _level; }
     }
 
     public void SetButton()
     {
         _isSet = false;
+        _level = DataManager.Instance.GetCookieData(Key).Level;
         ChangeImage();
     }
     protected override void OnButtonClick()

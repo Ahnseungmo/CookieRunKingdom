@@ -1,6 +1,7 @@
-using UnityEngine;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class CookieSettingManager : MonoBehaviour
 {
@@ -42,6 +43,33 @@ public class CookieSettingManager : MonoBehaviour
             obj.Key = _cookieDatas[i].Key;
             obj.SetButton();
         }
+        SortCookiesByLevelDesc();
+    }
+    private void SortCookiesByLevelDesc() // 소팅하는 부분 다시 할것(제대로 동작 x)
+    {
+        List<GameObject> buttonList = _buttons.GetAllToActiveTrue()
+            .OrderByDescending(b => b.GetComponent<CookieChoiceButton>().Level)
+            .ToList();
+
+        // 역순으로 SetSiblingIndex를 주면 깔끔하게 정렬됨
+        for (int i = 0; i < buttonList.Count; i++)
+        {
+            buttonList[i].transform.SetSiblingIndex(buttonList.Count - 1); // 제일 뒤로 이동
+        }
+
+        for (int i = 0; i < buttonList.Count; i++)
+        {
+            buttonList[i].transform.SetSiblingIndex(i);
+        }
+    }
+    private void SortCookiesByLevelAsc()
+    {
+        _cookieDatas = _cookieDatas.OrderBy(cookie => cookie.Level).ToList();
+    }
+
+    private void SortCookiesByTypeAsc()
+    {
+        _cookieDatas = _cookieDatas.OrderBy(cookie => cookie.Type).ToList();
     }
     private void CreateCookies()
     {
