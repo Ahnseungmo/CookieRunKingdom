@@ -92,6 +92,15 @@ public class DataManager : Singleton<DataManager>
         }
         return default(CookieData);
     }
+    public List<CookieData> GetAllCookieData()
+    {
+        List<CookieData> list = new List<CookieData>();
+        foreach (CookieData data in _cookieDatas.Values)
+        {
+            list.Add(data);
+        }
+        return list;
+    }
 
     public void LoadAllData()
     {
