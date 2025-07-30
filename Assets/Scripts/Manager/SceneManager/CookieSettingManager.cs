@@ -2,13 +2,14 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CookieSettingManager : MonoBehaviour
 {
     private GameObject _buttonParent;
     private PoolingManager _buttons;
-    private List<GameObject> _cookies;
-    private List<CookieData> _cookieDatas;
+    private PoolingManager _cookies;
+    private List<InventoryData> _cookieDatas;
 
 
     public void OnClickReset()
@@ -19,8 +20,48 @@ public class CookieSettingManager : MonoBehaviour
             CookieChoiceButton btn = obj.GetComponent<CookieChoiceButton>();
             btn.IsSet = false;
         }
+        List<GameObject> cookies = _cookies.GetAllToActiveTrue();
+        foreach (GameObject cookie in cookies)
+        {
+           cookie.SetActive(false);
+        }
     }
+    public void SpawnCookies(int key)
+    {
+        GameObject obj = _cookies.Pop();
+        PanelCharacter cookie = obj.GetComponent<PanelCharacter>();
+        cookie.Key = key;
 
+        List<GameObject> cookies = _cookies.GetAllToActiveTrue();
+        AllCookiePositionSetting(cookies);
+    }
+    public void DespawnCookies(int key)
+    {
+        List<GameObject> cookies = _cookies.GetAllToActiveTrue();
+
+        for (int i = 0; i < cookies.Count; i++)
+        {
+            PanelCharacter cooki = cookies[i].GetComponent<PanelCharacter>();
+            if (cooki.Key == key)
+            {
+                cooki.gameObject.SetActive(false);
+                cookies.RemoveAt(i);
+                break;
+            }
+        }
+        AllCookiePositionSetting(cookies);
+    }
+    private void AllCookiePositionSetting(List<GameObject> cookie)
+    {
+        Vector3 startPos = new Vector3(-3f, -1f, 0);
+        Vector3 addPos = new Vector3(2.5f, 1f, 0); 
+        foreach (GameObject obj in cookie)
+        {
+            PanelCharacter cooki = obj.GetComponent<PanelCharacter>();
+            Index2 index = CharacterManager.Instance.GetPositionByKey(cooki.Key);
+            cooki.transform.position = new Vector3(startPos.x+addPos.x * index.x, startPos.y+addPos.y * index.y, addPos.z);
+        }
+    }
     private void Start()
     {
         Init();
@@ -28,14 +69,14 @@ public class CookieSettingManager : MonoBehaviour
     private void Init()
     {
         _buttonParent = GameObject.Find("Panel/CookieButtons/Viewport/Content");
-        _cookieDatas = DataManager.Instance.GetAllCookieData();
+        _cookieDatas = DataManager.Instance.GetAllHaveCookieData();
         CreateButtons();
         CreateCookies();
     }
     private void CreateButtons()
     {
         _buttons = new PoolingManager("Prefabs/Buttons/CookieCoiceButton", _buttonParent, _cookieDatas.Count);
-
+        //SortCookiesByLevelAsc();
         for (int i = 0; i < _cookieDatas.Count; i++)
         {
             CookieChoiceButton obj = _buttons.Pop().GetComponent<CookieChoiceButton>();
@@ -43,7 +84,7 @@ public class CookieSettingManager : MonoBehaviour
             obj.Key = _cookieDatas[i].Key;
             obj.SetButton();
         }
-        SortCookiesByLevelDesc();
+
     }
     private void SortCookiesByLevelDesc() // 소팅하는 부분 다시 할것(제대로 동작 x)
     {
@@ -55,7 +96,7 @@ public class CookieSettingManager : MonoBehaviour
         for (int i = 0; i < buttonList.Count; i++)
         {
             buttonList[i].transform.SetSiblingIndex(buttonList.Count - 1); // 제일 뒤로 이동
-        }
+         }
 
         for (int i = 0; i < buttonList.Count; i++)
         {
@@ -73,16 +114,8 @@ public class CookieSettingManager : MonoBehaviour
     }
     private void CreateCookies()
     {
-      //  GameObject prefab = Resources.Load<GameObject>("Prefabs/StandCookie");
-      //  GameObject parent = new GameObject("Cookies");
-      //
-      //  _cookies = new List<GameObject>(9);
-      //
-      //  for (int i = 0; i < 9; i++)
-      //  {
-      //      GameObject obj = Object.Instantiate(prefab, parent.transform);
-      //      obj.SetActive(false);
-      //      _cookies.Add(obj);
-      //  }
+      _cookies = new PoolingManager("Prefabs/Character/PanelCharacter", "Cookies", 9);
     }
+
+    
 }
