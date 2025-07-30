@@ -8,17 +8,37 @@ using static UnityEngine.GraphicsBuffer;
 public class PanelCharacter : Character
 {
 
-    private int _key;
-
-    public int Key
+    private void Awake()
     {
-        get { return _key; } 
-        set 
-        { 
-            _key = value;
+
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             CharacterData characterData = new CharacterData();
-            characterData.Key = _key;
+            characterData.Key = 1001;
             CharData = characterData;
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            CharacterData characterData = new CharacterData();
+            characterData.Key = 1002;
+            CharData = characterData;
+        }
+
     }
+
+
+
 }

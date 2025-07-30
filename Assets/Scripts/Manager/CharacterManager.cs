@@ -4,33 +4,22 @@ using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public struct Index2
-{
-    public int y;
-    public int x;
 
-    public Index2(int y, int x)
-    {
-        this.y = y;
-        this.x = x;
-    }
-}
 public class CharacterManager : Singleton<CharacterManager>
 {
-    private HashSet<int> _setCharacterList = new HashSet<int>();
+    private List<int> _setCharacterList = new List<int>();
     private int _characterCount = 0;
     private int[,] _characterArr = new int[3,3];
-    private bool _isFull = false;
 
     private int _characterTypeNum = 0;
-    public HashSet<int> Character
+    public List<int> Character
     { get { return _setCharacterList; } }
 
     public bool SetCharacter(int key)
     {
         if (_characterCount == 5) return false;
         _characterCount++;
-        InventoryData cookie = DataManager.Instance.GetInventoryData(key);
+        CookieData cookie = DataManager.Instance.GetCookieData(key);
         
         switch (cookie.Type)
         {
@@ -49,23 +38,13 @@ public class CharacterManager : Singleton<CharacterManager>
 
         }
 
- 
-        _setCharacterList.Add(key);
         Debug.Log(_characterArr[0, 0] + "|" + _characterArr[0, 1] + "|" + _characterArr[0, 2]);
         Debug.Log(_characterArr[1, 0] + "|" + _characterArr[1, 1] + "|" + _characterArr[1, 2]);
         Debug.Log(_characterArr[2, 0] + "|" + _characterArr[2, 1] + "|" + _characterArr[2, 2]);
         Debug.Log("---------------------------------------------------");
         return true;
     }
-    public Index2 GetPositionByKey(int key)
-    {
-        for(int y=0;y<3;y++)
-            for(int x=0;x<3;x++)
-            {
-                if (_characterArr[y, x] == key) return new Index2(y, x);
-            }
-        return new Index2(3,3);
-    }
+
     public void SetOffCharacter(int key)
     {
         _characterCount--;
@@ -74,7 +53,6 @@ public class CharacterManager : Singleton<CharacterManager>
                 if (_characterArr[y, x] == key)
                 {
                     _characterArr[y, x] = 0;
-                    _setCharacterList.Remove(key);
                     SetOffPosition(y,x);
                     //return;
                 }
@@ -89,30 +67,21 @@ public class CharacterManager : Singleton<CharacterManager>
         for (int y = 0; y < 3; y++)
             for (int x = 0; x < 3; x++)
                 _characterArr[y,x] = 0;
-        _setCharacterList.Clear();
-        _characterCount = 0;
     }
 
     private void SetOffPosition(int y,int x)
     {
         if (y == 1) return;
-        HashSet<int> temp = new HashSet<int>(_setCharacterList);
-        ResetAll();
-
-        foreach (int key in temp)
+        else if(y == 2)
         {
-            SetCharacter(key);
+            _characterArr[1,x] = _characterArr[0, x];
+            _characterArr[0, x] = 0;
         }
-        //else if(y == 2)
-        //{
-        //    _characterArr[1,x] = _characterArr[0, x];
-        //    _characterArr[0, x] = 0;
-        //}
-        //else
-        //{
-        //    _characterArr[1,x] = _characterArr[2, x];
-        //    _characterArr[2, x] = 0;
-        //}
+        else
+        {
+            _characterArr[1,x] = _characterArr[2, x];
+            _characterArr[2, x] = 0;
+        }
     }
     private void SettingPosition(int num, int key)
     {
@@ -124,8 +93,8 @@ public class CharacterManager : Singleton<CharacterManager>
         }
         else if (_characterArr[1, num]!=0)
         {
-            InventoryData originData = DataManager.Instance.GetInventoryData(_characterArr[1, num]);
-            InventoryData keyData = DataManager.Instance.GetInventoryData(key);
+            CharacterData originData = DataManager.Instance.GetCharacterData(_characterArr[1, num]);
+            CharacterData keyData = DataManager.Instance.GetCharacterData(key);
 
             if (originData.Defense>keyData.Defense)
             {
@@ -142,38 +111,29 @@ public class CharacterManager : Singleton<CharacterManager>
             return;
         }
 
-        if(_characterTypeNum ==2)
-        {
-            if (_characterArr[0, num - 1] != 0 && _characterArr[2, num - 1] != 0)
-            {
-                _isFull = true;
-            }
-        }
 
-        if (num > 0 && _characterTypeNum != 3 && !_isFull)
+        if (num > 0 && _characterTypeNum != 3)
         {
-            List<InventoryData> data = new List<InventoryData>();
-            data.Add(DataManager.Instance.GetInventoryData(_characterArr[0, num]));
-            data.Add(DataManager.Instance.GetInventoryData(_characterArr[2, num]));
-            data.Add(DataManager.Instance.GetInventoryData(key));
+            List<CharacterData> data = new List<CharacterData>();
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[0, num]));
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[2, num]));
+            data.Add(DataManager.Instance.GetCharacterData(key));
             float min = data[2].Defense;
             int temp = key;
 
-            for(int i=0;i<2;i++)
+            if (data[0].Defense < min)
             {
-                if (data[i].Defense < min)
-                    min = data[i].Defense;
-            }
-            
-            if (data[0].Defense == min)
-            {
+                min = data[0].Defense;
                 temp = _characterArr[0, num];
                 _characterArr[0, num] = key;
             }
-            else if (data[1].Defense == min)
+            else if (data[1].Defense < min)
             {
+                min = data[1].Defense;
+
                 temp = _characterArr[2, num];
                 _characterArr[2, num] = key;
+                key = temp;
             }
 
             SettingPosition(num - 1, temp);
@@ -184,30 +144,29 @@ public class CharacterManager : Singleton<CharacterManager>
         else if (num < 2 && _characterTypeNum != 1)
         {
             Debug.Log("3");
-            List<InventoryData> data = new List<InventoryData>();
-            data.Add(DataManager.Instance.GetInventoryData(_characterArr[0, num]));
-            data.Add(DataManager.Instance.GetInventoryData(_characterArr[2, num]));
-            data.Add(DataManager.Instance.GetInventoryData(key));
-            float max = data[2].Defense;
+            List<CharacterData> data = new List<CharacterData>();
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[0, num]));
+            data.Add(DataManager.Instance.GetCharacterData(_characterArr[2, num]));
+            data.Add(DataManager.Instance.GetCharacterData(key));
+            float max = 0;
             int temp = key;
 
-            for(int i=0;i<2;i++)
+            if (data[0].Defense > max)
             {
-                if(data[i].Defense > max)
-                    max = data[i].Defense;
-            }
-
-            if (data[0].Defense == max)
-            {
+                max = data[0].Defense;
                 temp = _characterArr[0, num];
                 _characterArr[0, num] = key;
+                key = temp;
             }
-            else if (data[1].Defense == max)
+            else if (data[1].Defense > max)
             {
+                max = data[1].Defense;
+
                 temp = _characterArr[2, num];
                 _characterArr[2, num] = key;
+                key = temp;
             }
-            _isFull = false;
+
             SettingPosition(num + 1, temp);
             return;
         }

@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: e27f8ee4b9ec49640b7e48ab58aad03c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2517770917579377092
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_0
+  - first:
+      213: 859530012015758016
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_1
+  - first:
+      213: 9177081120238067819
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_2
+  - first:
+      213: -7288387115072829419
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_3
+  - first:
+      213: 2788660054746155771
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_4
+  - first:
+      213: 8226514303203921348
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_5
+  - first:
+      213: 2866642266328164313
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_6
+  - first:
+      213: 8420700762837023053
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_7
+  - first:
+      213: 4332638165521012009
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_8
+  - first:
+      213: -4371338344917945079
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_9
+  - first:
+      213: 2530446469967154638
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_10
+  - first:
+      213: -7580742478524306304
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_11
+  - first:
+      213: 6885665998591500129
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_12
+  - first:
+      213: -1602103099302384577
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_13
+  - first:
+      213: -7003012026760447767
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_14
+  - first:
+      213: -2166849432076805261
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_15
+  - first:
+      213: -1216551706611332070
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_16
+  - first:
+      213: -3219337302741163536
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_17
+  - first:
+      213: -7617758948101469070
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_18
+  - first:
+      213: 6768422748133013515
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_19
+  - first:
+      213: 635091994895203271
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_20
+  - first:
+      213: -372126326644788414
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_21
+  - first:
+      213: -5606378333692635457
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_22
+  - first:
+      213: -2264652944712378805
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_23
+  - first:
+      213: -8333419890275720392
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_24
+  - first:
+      213: -8032191213945277693
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_25
+  - first:
+      213: 3830943416529826078
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_26
+  - first:
+      213: 4655571643830202690
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_27
+  - first:
+      213: -2004338106699969115
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_28
+  - first:
+      213: -1091790211946048509
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_29
+  - first:
+      213: -7852963404494907230
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_30
+  - first:
+      213: 4146502193049397178
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_31
+  - first:
+      213: 4293034435559231549
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_32
+  - first:
+      213: -7653579386553273889
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_33
+  - first:
+      213: 4657201047024117944
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_34
+  - first:
+      213: 6243029278157486823
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_35
+  - first:
+      213: -2588600220589349568
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_36
+  - first:
+      213: -5112225444785244112
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_37
+  - first:
+      213: 7413306707721496965
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_38
+  - first:
+      213: -5762446962228946367
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_39
+  - first:
+      213: -3602348400976942041
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_40
+  - first:
+      213: 5004925618616343084
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_41
+  - first:
+      213: 1063495619867777604
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_42
+  - first:
+      213: 2034857519056733669
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_43
+  - first:
+      213: -5271506395714975191
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_44
+  - first:
+      213: 4992614997694868270
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_45
+  - first:
+      213: 3779961244497078722
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_46
+  - first:
+      213: 8987586955914906091
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_47
+  - first:
+      213: -5802412856679168818
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_48
+  - first:
+      213: 5632102937450105970
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_49
+  - first:
+      213: -5859106411316766176
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_50
+  - first:
+      213: -8738477490258493066
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_51
+  - first:
+      213: 8117059245253378633
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_52
+  - first:
+      213: 2329586187427483738
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_53
+  - first:
+      213: -2135962382261374345
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_54
+  - first:
+      213: -58763709706557907
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_55
+  - first:
+      213: -2165310248649979604
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_56
+  - first:
+      213: -3724192205168758714
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_57
+  - first:
+      213: 4730528016265293446
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_58
+  - first:
+      213: 7023691823622879277
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_59
+  - first:
+      213: -2986011430230960647
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_60
+  - first:
+      213: 4347511992474229780
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_61
+  - first:
+      213: 2942448450082173593
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_62
+  - first:
+      213: -3957813380875293725
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_63
+  - first:
+      213: 7813790994668163745
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_64
+  - first:
+      213: 6097040487767460764
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_65
+  - first:
+      213: -8744619966782906259
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_66
+  - first:
+      213: 5821053562408662534
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_67
+  - first:
+      213: 3911291680042643664
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_68
+  - first:
+      213: 9154117625884991678
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_69
+  - first:
+      213: 4611710660340440918
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_70
+  - first:
+      213: -8923992254609136870
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_71
+  - first:
+      213: 2285563977835760093
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_72
+  - first:
+      213: 436538202978581453
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_73
+  - first:
+      213: -4004473524093901641
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_74
+  - first:
+      213: -8181521738344247901
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_75
+  - first:
+      213: -7282852626721017895
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_76
+  - first:
+      213: 2928751240324450148
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_77
+  - first:
+      213: -2686620687776219363
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_78
+  - first:
+      213: -3692822066845112262
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_79
+  - first:
+      213: -5150149764713085583
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_80
+  - first:
+      213: 4348803655112139749
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_81
+  - first:
+      213: -5739716163394745034
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_82
+  - first:
+      213: 1041433017404841982
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_83
+  - first:
+      213: 7457804265931259477
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_84
+  - first:
+      213: -7605153058137513427
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_85
+  - first:
+      213: -2379582493050327580
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_86
+  - first:
+      213: 6550128182126725805
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_87
+  - first:
+      213: -6413921640590610175
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_88
+  - first:
+      213: 4464054219874288731
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_89
+  - first:
+      213: -2190118680650831710
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_90
+  - first:
+      213: 4891148062990942498
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_91
+  - first:
+      213: -3976873793331260390
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_92
+  - first:
+      213: 8475221746841563890
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_93
+  - first:
+      213: 8455880408823275129
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_94
+  - first:
+      213: -5104852167690483647
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_95
+  - first:
+      213: -3254514514817506705
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_96
+  - first:
+      213: -7425115841588264855
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_97
+  - first:
+      213: -6146647294911701752
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_98
+  - first:
+      213: 4426846805053373290
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_99
+  - first:
+      213: 7804614291065638006
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_100
+  - first:
+      213: 6078376092937512478
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_101
+  - first:
+      213: 5866136751296444465
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_102
+  - first:
+      213: 6580591663143577467
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_103
+  - first:
+      213: 5511148813659401033
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_104
+  - first:
+      213: -1157990528030354990
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_105
+  - first:
+      213: 4649108537863318508
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_106
+  - first:
+      213: 2769769331940206397
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_107
+  - first:
+      213: -6601099150296168945
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_108
+  - first:
+      213: 7236035673025203738
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_109
+  - first:
+      213: -781699150140742693
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_110
+  - first:
+      213: 3382090545495550740
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_111
+  - first:
+      213: 1013506628673232077
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_112
+  - first:
+      213: 950896820092894029
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_113
+  - first:
+      213: 1241072828327274239
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_114
+  - first:
+      213: -3646605147459982600
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_115
+  - first:
+      213: -5196994616525209217
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_116
+  - first:
+      213: 6290511302820003042
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_117
+  - first:
+      213: -4880984255867627752
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_118
+  - first:
+      213: 7061904340563759868
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_119
+  - first:
+      213: -5380594608895783002
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_120
+  - first:
+      213: 3039538893664440882
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_121
+  - first:
+      213: -874194143618387511
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_122
+  - first:
+      213: -1837252618482565819
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_123
+  - first:
+      213: -6771739352644944007
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_124
+  - first:
+      213: -4823831930791835555
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_125
+  - first:
+      213: 3250150565823613425
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_126
+  - first:
+      213: 4940161163301775358
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_127
+  - first:
+      213: -3466125473670151647
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_128
+  - first:
+      213: 6211394123587828316
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_129
+  - first:
+      213: 7554325425494971809
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_130
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EndingGiftBack
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 556
+        width: 699
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12245fafe39d5efc0800000000000000
+      internalID: -3466125473670151647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 46998ebf4bc7aca469c2e988c02db857
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EndingGiftBack: -3466125473670151647
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_0: -2517770917579377092
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_1: 859530012015758016
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_10: 2530446469967154638
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_100: 7804614291065638006
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_101: 6078376092937512478
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_102: 5866136751296444465
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_103: 6580591663143577467
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_104: 5511148813659401033
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_105: -1157990528030354990
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_106: 4649108537863318508
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_107: 2769769331940206397
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_108: -6601099150296168945
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_109: 7236035673025203738
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_11: -7580742478524306304
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_110: -781699150140742693
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_111: 3382090545495550740
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_112: 1013506628673232077
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_113: 950896820092894029
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_114: 1241072828327274239
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_115: -3646605147459982600
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_116: -5196994616525209217
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_117: 6290511302820003042
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_118: -4880984255867627752
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_119: 7061904340563759868
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_12: 6885665998591500129
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_120: -5380594608895783002
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_121: 3039538893664440882
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_122: -874194143618387511
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_123: -1837252618482565819
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_124: -6771739352644944007
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_125: -4823831930791835555
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_126: 3250150565823613425
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_127: 4940161163301775358
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_129: 6211394123587828316
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_13: -1602103099302384577
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_130: 7554325425494971809
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_14: -7003012026760447767
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_15: -2166849432076805261
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_16: -1216551706611332070
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_17: -3219337302741163536
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_18: -7617758948101469070
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_19: 6768422748133013515
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_2: 9177081120238067819
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_20: 635091994895203271
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_21: -372126326644788414
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_22: -5606378333692635457
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_23: -2264652944712378805
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_24: -8333419890275720392
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_25: -8032191213945277693
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_26: 3830943416529826078
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_27: 4655571643830202690
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_28: -2004338106699969115
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_29: -1091790211946048509
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_3: -7288387115072829419
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_30: -7852963404494907230
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_31: 4146502193049397178
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_32: 4293034435559231549
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_33: -7653579386553273889
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_34: 4657201047024117944
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_35: 6243029278157486823
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_36: -2588600220589349568
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_37: -5112225444785244112
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_38: 7413306707721496965
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_39: -5762446962228946367
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_4: 2788660054746155771
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_40: -3602348400976942041
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_41: 5004925618616343084
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_42: 1063495619867777604
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_43: 2034857519056733669
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_44: -5271506395714975191
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_45: 4992614997694868270
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_46: 3779961244497078722
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_47: 8987586955914906091
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_48: -5802412856679168818
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_49: 5632102937450105970
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_5: 8226514303203921348
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_50: -5859106411316766176
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_51: -8738477490258493066
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_52: 8117059245253378633
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_53: 2329586187427483738
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_54: -2135962382261374345
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_55: -58763709706557907
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_56: -2165310248649979604
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_57: -3724192205168758714
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_58: 4730528016265293446
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_59: 7023691823622879277
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_6: 2866642266328164313
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_60: -2986011430230960647
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_61: 4347511992474229780
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_62: 2942448450082173593
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_63: -3957813380875293725
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_64: 7813790994668163745
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_65: 6097040487767460764
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_66: -8744619966782906259
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_67: 5821053562408662534
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_68: 3911291680042643664
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_69: 9154117625884991678
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_7: 8420700762837023053
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_70: 4611710660340440918
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_71: -8923992254609136870
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_72: 2285563977835760093
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_73: 436538202978581453
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_74: -4004473524093901641
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_75: -8181521738344247901
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_76: -7282852626721017895
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_77: 2928751240324450148
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_78: -2686620687776219363
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_79: -3692822066845112262
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_8: 4332638165521012009
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_80: -5150149764713085583
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_81: 4348803655112139749
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_82: -5739716163394745034
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_83: 1041433017404841982
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_84: 7457804265931259477
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_85: -7605153058137513427
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_86: -2379582493050327580
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_87: 6550128182126725805
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_88: -6413921640590610175
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_89: 4464054219874288731
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_9: -4371338344917945079
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_90: -2190118680650831710
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_91: 4891148062990942498
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_92: -3976873793331260390
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_93: 8475221746841563890
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_94: 8455880408823275129
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_95: -5104852167690483647
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_96: -3254514514817506705
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_97: -7425115841588264855
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_98: -6146647294911701752
+      sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_99: 4426846805053373290
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

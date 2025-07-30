@@ -1,6 +1,6 @@
-key,type,name,hp,levelperhp,levelperattack,levelperdeffen,levelpercritical
-1001,1,Normal,100,100,50,30,0
-1002,1,StrawBerry,100,100,50,30,0
-1003,1,Knight,100,100,50,30,0
-1004,3,Angle,100,100,50,30,0
-1005,2,Ninja,100,100,50,30,0
+key,type,name,hp,Level,levelperhp,levelperattack,levelperdeffen,levelpercritical
+1001,1,Normal,100,1,100,50,30,0
+1002,1,StrawBerry,100,2,100,50,30,0
+1003,1,Knight,100,1,100,50,30,0
+1004,3,Angle,100,1,100,50,30,0
+1005,2,Ninja,100,1,100,50,30,0

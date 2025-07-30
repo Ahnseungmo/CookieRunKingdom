@@ -20,8 +20,12 @@ public class CharacterAnimation : MonoBehaviour
     private Character _character;
 
     bool _isLoop = false;
+
+
     private void Awake()
     {
+
+
         Init();
         if (_character.CompareTag("Player"))
         {
@@ -32,12 +36,15 @@ public class CharacterAnimation : MonoBehaviour
             animationKey.Add(CharState.Idle_front, "idle");
             animationKey.Add(CharState.Victory, "joy");
             animationKey.Add(CharState.Lose, "lose");
+
         }
+
+
     }
 
     private void Init()
     {
-       _character = GetComponent<Character>();
+        _character = GetComponent<Character>();
         key = _character.CharData.Key;
         print(key);
 
@@ -55,6 +62,7 @@ public class CharacterAnimation : MonoBehaviour
     {
         _charState = _character.State;
         state.SetAnimation(0, animationKey[_charState], true);
+
     }
 
     // Update is called once per frame

@@ -229,13 +229,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GiftSprites_3
+      name: SwordBackShield
       rect:
         serializedVersion: 2
-        x: 0
-        y: 283
-        width: 788
-        height: 1055
+        x: 414
+        y: 835
+        width: 277
+        height: 176
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,79 +449,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GiftSprites_13
+      name: BackLight
       rect:
         serializedVersion: 2
-        x: 1755
-        y: 773
-        width: 115
-        height: 148
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db67f8642f6dbdfc0800000000000000
-      internalID: -3468942751904598339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_14
-      rect:
-        serializedVersion: 2
-        x: 1870
-        y: 777
-        width: 63
-        height: 152
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4daf781f86eb96a0800000000000000
-      internalID: -6441301339757630134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_15
-      rect:
-        serializedVersion: 2
-        x: 1893
-        y: 783
-        width: 104
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4689d4b89f139c7e0800000000000000
-      internalID: -1744808432775620508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_16
-      rect:
-        serializedVersion: 2
-        x: 1735
-        y: 663
-        width: 115
-        height: 101
+        x: 1721
+        y: 628
+        width: 292
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -532,72 +466,6 @@ TextureImporter:
       bones: []
       spriteID: 8fb1198207d243a00800000000000000
       internalID: 735262598908419064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_17
-      rect:
-        serializedVersion: 2
-        x: 1764
-        y: 623
-        width: 101
-        height: 143
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 61740279fc2b9d8c0800000000000000
-      internalID: -3973948591514302698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_18
-      rect:
-        serializedVersion: 2
-        x: 1863
-        y: 615
-        width: 74
-        height: 145
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b426438ba3f7b8c0800000000000000
-      internalID: -3983447427418544969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GiftSprites_19
-      rect:
-        serializedVersion: 2
-        x: 1892
-        y: 679
-        width: 121
-        height: 134
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7fdcaf523afb49c50800000000000000
-      internalID: 6671167655480315383
       vertices: []
       indices: 
       edges: []
@@ -660,6 +528,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      BackLight: 735262598908419064
       GiftSprites_0: 7153049497529825605
       GiftSprites_1: 2484108343720921009
       GiftSprites_11: -8441285191057794926
@@ -667,13 +536,11 @@ TextureImporter:
       GiftSprites_13: -3468942751904598339
       GiftSprites_14: -6441301339757630134
       GiftSprites_15: -1744808432775620508
-      GiftSprites_16: 735262598908419064
       GiftSprites_17: -3973948591514302698
       GiftSprites_18: -3983447427418544969
       GiftSprites_19: 6671167655480315383
       GiftSprites_2: 1360654621110091064
       GiftSprites_21: -1111551624667718355
-      GiftSprites_3: -4887914780432635807
       GiftSprites_4: 1843899790904866432
       GiftSprites_5: 6899923999649678655
       GiftSprites_6: 256522118528206265
@@ -681,6 +548,7 @@ TextureImporter:
       GiftSprites_8: -8209487675260208174
       GiftSprites_9: -7721662977046632999
       SwordBack: 5237200386733448339
+      SwordBackShield: -4887914780432635807
       VictorySword: 1033903188607840934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
