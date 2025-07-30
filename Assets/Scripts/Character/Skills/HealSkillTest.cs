@@ -6,7 +6,7 @@ public class HealSkillTest : MonoBehaviour
     public float curHp = 60;
     public float attack = 40;
 
-    private WideHealSkill healSkill;
+    private WideHeal healSkill;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class HealSkillTest : MonoBehaviour
             Attack = attack,
         };
 
-        healSkill = new WideHealSkill();
+        healSkill = new WideHeal();
         healSkill.Init("힐스킬", 5.0f);
 
         // 처음 상태 출력

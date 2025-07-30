@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,37 +10,95 @@ public class SkillButtonManager : MonoBehaviour
 
     void Start()
     {
-        //임시로 다받아옴 배치된 캐릭터 정보 받아와야함
         DataManager.Instance.LoadAllData();
-        var charList = DataManager.Instance.GetAllCharacterData();
-        for (int i = 0; i < Mathf.Min(5, charList.Count); ++i)
+
+        // ★ 전체 캐릭터 데이터 기준으로 버튼 생성 ★
+        List<CharacterData> charList = DataManager.Instance.GetAllCharacterData();
+        for (int i = 0; i < charList.Count; ++i)
         {
             CharacterData charData = charList[i];
+
+            // 빈 슬롯 체크(필요시, 아니면 생략 가능)
+            if (charData.Key <= 0) continue;
+
             GameObject btnObj = Instantiate(skillButtonPrefab, skillButtonsParent);
             SkillButton btn = btnObj.GetComponent<SkillButton>();
 
-            // 1. 등급(enum) 변환 및 등급별 이미지 적용
+            // 등급별 UI 세팅
             SkillButton.Grade gradeEnum = SkillManager.Instance.GradeStringToEnum(charData.Grade);
             btn.SetGrade(gradeEnum);
+            btn.StartCooldown(0);
 
-            // 2. 쿨타임(초) 설정
-            btn.StartCooldown(0); // 초기엔 쿨타임 없음(혹은 비활성)으로 시작, 실제 사용시 쿨타임 적용
+            // 스킬 인스턴스 생성 (팩토리+초기화)
+            Skills skill = SkillManager.Instance.CreateSkill(charData.SkillName, charData.Cooltime);
 
-            // 3. 버튼 클릭 이벤트 연결 (반드시 Button 컴포넌트의 OnClick에 연결!)
-            btnObj.GetComponent<Button>().onClick.AddListener(() =>
+            // 클로저 복사
+            CharacterData capturedCharData = charData;
+            SkillButton capturedBtn = btn;
+            Skills capturedSkill = skill;
+
+            Button uiButton = btnObj.GetComponent<Button>();
+            uiButton.onClick.AddListener(() =>
             {
-                // 3-1. 쿨타임 시작
-                btn.StartCooldown(charData.Cooltime);
+                capturedBtn.StartCooldown(capturedCharData.Cooltime);
 
-                // 3-2. (옵션) 실제 스킬 효과, 로그
-                float curHp = 60;
-                float healAmount = charData.Attack * 0.5f;
-                curHp += healAmount;
-                if (curHp > charData.Hp)
-                    curHp = charData.Hp;
-
-                Debug.Log($"{charData.Name} 스킬 사용! {healAmount}만큼 회복 (최종: {curHp}/{charData.Hp})");
+                if (capturedSkill != null)
+                    capturedSkill.CheckSkill(capturedCharData);
+                else
+                    Debug.LogWarning($"스킬 없음: {capturedCharData.SkillName}");
             });
         }
     }
 }
+
+
+//{
+//    public GameObject skillButtonPrefab;
+//    public Transform skillButtonsParent;
+//
+//    void Start()
+//    {
+//        // 데이터 로드
+//        DataManager.Instance.LoadAllData();
+//
+//        // 파티에 배치된 캐릭터 키 리스트 (CharacterManager에서 가져옴)
+//        List<int> charKeyList = CharacterManager.Instance.Character;
+//        for (int i = 0; i < charKeyList.Count; ++i)
+//        {
+//            int charKey = charKeyList[i];
+//            if (charKey <= 0) continue; // 빈 슬롯 스킵
+//
+//            CharacterData charData = DataManager.Instance.GetCharacterData(charKey);
+//
+//            // 버튼 프리팹 생성
+//            GameObject btnObj = Instantiate(skillButtonPrefab, skillButtonsParent);
+//            SkillButton btn = btnObj.GetComponent<SkillButton>();
+//
+//            // 등급별 UI 세팅
+//            SkillButton.Grade gradeEnum = SkillManager.Instance.GradeStringToEnum(charData.Grade);
+//            btn.SetGrade(gradeEnum);
+//            btn.StartCooldown(0);
+//
+//            // 각 캐릭터의 스킬 생성 (팩토리 + 초기화)
+//            Skills skill = SkillManager.Instance.CreateSkill(charData.SkillName, charData.Cooltime);
+//
+//            // 클릭 이벤트 (람다 클로저 캡처! 반드시 복사본)
+//            CharacterData capturedCharData = charData;
+//            SkillButton capturedBtn = btn;
+//            Skills capturedSkill = skill;
+//
+//            Button uiButton = btnObj.GetComponent<Button>();
+//            uiButton.onClick.AddListener(() =>
+//            {
+//                // 쿨타임 UI
+//                capturedBtn.StartCooldown(capturedCharData.Cooltime);
+//
+//                // 쿨타임/조건 체크 & 스킬 실행
+//                if (capturedSkill != null)
+//                    capturedSkill.CheckSkill(capturedCharData);
+//                else
+//                    Debug.LogWarning($"스킬 없음: {capturedCharData.SkillName}");
+//            });
+//        }
+//    }
+//}

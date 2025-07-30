@@ -14,6 +14,7 @@ public class CharacterManager : Singleton<CharacterManager>
     private int _characterTypeNum = 0;
     public List<int> Character
     { get { return _setCharacterList; } }
+    public int[,] CharacterArr { get { return _characterArr; } }
 
     public bool SetCharacter(int key)
     {

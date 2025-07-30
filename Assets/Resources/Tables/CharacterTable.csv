@@ -1,5 +1,5 @@
 key,type,name,hp,attack,deffen,critical,speed,cooltime,grade,skillname
-1001,1,Normal,100,50,30,0,50,10,Normal,돌진
+1001,1,Normal,100,50,30,0,50,10,Normal,WideHeal
 1002,1,StrawBerry,100,50,50,0,50,11,Normal,돌진
 1003,1,Knight,100,50,10,0,50,12,Rare,돌진
 1004,1,Angle,100,50,30,0,50,13,Rare,힐
