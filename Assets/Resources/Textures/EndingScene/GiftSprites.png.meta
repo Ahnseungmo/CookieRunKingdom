@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 10b9e46d5599ec9439cf83afe358922b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7153049497529825605
+    second: GiftSprites_0
+  - first:
+      213: 2484108343720921009
+    second: GiftSprites_1
+  - first:
+      213: 1360654621110091064
+    second: GiftSprites_2
+  - first:
+      213: -4887914780432635807
+    second: GiftSprites_3
+  - first:
+      213: 1843899790904866432
+    second: GiftSprites_4
+  - first:
+      213: 6899923999649678655
+    second: GiftSprites_5
+  - first:
+      213: 256522118528206265
+    second: GiftSprites_6
+  - first:
+      213: 3970762387224587583
+    second: GiftSprites_7
+  - first:
+      213: -8209487675260208174
+    second: GiftSprites_8
+  - first:
+      213: -7721662977046632999
+    second: GiftSprites_9
+  - first:
+      213: 1033903188607840934
+    second: GiftSprites_10
+  - first:
+      213: -8441285191057794926
+    second: GiftSprites_11
+  - first:
+      213: -1345772491126811164
+    second: GiftSprites_12
+  - first:
+      213: -3468942751904598339
+    second: GiftSprites_13
+  - first:
+      213: -6441301339757630134
+    second: GiftSprites_14
+  - first:
+      213: -1744808432775620508
+    second: GiftSprites_15
+  - first:
+      213: 735262598908419064
+    second: GiftSprites_16
+  - first:
+      213: -3973948591514302698
+    second: GiftSprites_17
+  - first:
+      213: -3983447427418544969
+    second: GiftSprites_18
+  - first:
+      213: 6671167655480315383
+    second: GiftSprites_19
+  - first:
+      213: 5237200386733448339
+    second: GiftSprites_20
+  - first:
+      213: -1111551624667718355
+    second: GiftSprites_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GiftSprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1553
+        width: 90
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5493d099e9cb44360800000000000000
+      internalID: 7153049497529825605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1543
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7c1139063597220800000000000000
+      internalID: 2484108343720921009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1338
+        width: 239
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83db2493b2402e210800000000000000
+      internalID: 1360654621110091064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 283
+        width: 788
+        height: 1055
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1686eeb8763aa2cb0800000000000000
+      internalID: -4887914780432635807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_4
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1257
+        width: 241
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0863d462719d69910800000000000000
+      internalID: 1843899790904866432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_5
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1312
+        width: 124
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35cf40025471cf50800000000000000
+      internalID: 6899923999649678655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_6
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1075
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b587e7f1895f8300800000000000000
+      internalID: 256522118528206265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_7
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 817
+        width: 153
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3de00a6a5bfa1730800000000000000
+      internalID: 3970762387224587583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_8
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 971
+        width: 124
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbfa20847a021e80800000000000000
+      internalID: -8209487675260208174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_9
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 931
+        width: 81
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5a9d9fe6427d490800000000000000
+      internalID: -7721662977046632999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VictorySword
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 229
+        width: 577
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a23d11e879295e00800000000000000
+      internalID: 1033903188607840934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_11
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 821
+        width: 108
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2981c33b7d78ada80800000000000000
+      internalID: -8441285191057794926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_12
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 821
+        width: 124
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5d4edac0bd25de0800000000000000
+      internalID: -1345772491126811164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_13
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 773
+        width: 115
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db67f8642f6dbdfc0800000000000000
+      internalID: -3468942751904598339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_14
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 777
+        width: 63
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4daf781f86eb96a0800000000000000
+      internalID: -6441301339757630134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_15
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 783
+        width: 104
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4689d4b89f139c7e0800000000000000
+      internalID: -1744808432775620508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_16
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 663
+        width: 115
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb1198207d243a00800000000000000
+      internalID: 735262598908419064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_17
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 623
+        width: 101
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61740279fc2b9d8c0800000000000000
+      internalID: -3973948591514302698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_18
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 615
+        width: 74
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b426438ba3f7b8c0800000000000000
+      internalID: -3983447427418544969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_19
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 679
+        width: 121
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdcaf523afb49c50800000000000000
+      internalID: 6671167655480315383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SwordBack
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 668
+        width: 751
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c19ccf0064ea840800000000000000
+      internalID: 5237200386733448339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GiftSprites_21
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1
+        width: 124
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d1c26cfa9f290f0800000000000000
+      internalID: -1111551624667718355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2ac1c7ec7aebbde43872ec6d58046b68
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GiftSprites_0: 7153049497529825605
+      GiftSprites_1: 2484108343720921009
+      GiftSprites_11: -8441285191057794926
+      GiftSprites_12: -1345772491126811164
+      GiftSprites_13: -3468942751904598339
+      GiftSprites_14: -6441301339757630134
+      GiftSprites_15: -1744808432775620508
+      GiftSprites_16: 735262598908419064
+      GiftSprites_17: -3973948591514302698
+      GiftSprites_18: -3983447427418544969
+      GiftSprites_19: 6671167655480315383
+      GiftSprites_2: 1360654621110091064
+      GiftSprites_21: -1111551624667718355
+      GiftSprites_3: -4887914780432635807
+      GiftSprites_4: 1843899790904866432
+      GiftSprites_5: 6899923999649678655
+      GiftSprites_6: 256522118528206265
+      GiftSprites_7: 3970762387224587583
+      GiftSprites_8: -8209487675260208174
+      GiftSprites_9: -7721662977046632999
+      SwordBack: 5237200386733448339
+      VictorySword: 1033903188607840934
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
