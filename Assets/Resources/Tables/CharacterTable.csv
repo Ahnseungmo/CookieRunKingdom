@@ -1,7 +1,7 @@
-key,type,name,hp,attack,deffen,critical,speed,cooltime,grade,skillname
-1001,1,Normal,100,50,30,0,50,10,Normal,WideHeal
-1002,1,StrawBerry,100,50,50,0,50,11,Normal,돌진
-1003,1,Knight,100,50,10,0,50,12,Rare,돌진
-1004,1,Angle,100,50,30,0,50,13,Rare,힐
-1005,1,Ninja,80,50,30,0,50,14,Rare,돌진
-2001,2,Monster,100,20,30,0,100,0,0,0
+key,type,name,hp,attack,deffen,critical,speed,cooltime,grade,skillname,skill1,skill2
+1001,1,Normal,100,50,30,0,50,10,Normal,WideHeal,10,10
+1002,1,StrawBerry,100,50,50,0,50,11,Normal,?�진,10,10
+1003,1,Knight,100,50,10,0,50,12,Rare,?�진,10,10
+1004,1,Angle,100,50,30,0,50,13,Rare,??,10,10
+1005,1,Ninja,80,50,30,0,50,14,Rare,?�진,10,10
+2001,2,Monster,100,20,30,0,100,0,0,0,0,0

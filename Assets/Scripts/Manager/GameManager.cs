@@ -6,5 +6,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void Awake()
     {
         DataManager.Instance.LoadAllData();
+        InventoryManager.Instance.SetData();
     }
 }

@@ -31,6 +31,19 @@ public struct CookieData
     public float LevelPerCritical;
 
 }
+public struct InventoryData
+{
+    public int Key;
+    public int Type;
+    public string Name;
+    public int Level;
+    public float Defense;
+
+    public void LevelUp()
+    {
+        Level += 1;
+    }
+}
 
 public struct WorldData
 {
@@ -67,7 +80,7 @@ public class DataManager : Singleton<DataManager>
 {
     private Dictionary<int, CharacterData> _characterDatas = new Dictionary<int, CharacterData>();
     private Dictionary<int, CookieData> _cookieDatas = new Dictionary<int, CookieData>();
-
+    private Dictionary<int, InventoryData> _inventoryDatas = new Dictionary<int, InventoryData>();
     //캐릭터 구현필요
 
     public static Dictionary<int, System.Type> skillMap = new Dictionary<int, System.Type>
@@ -115,6 +128,11 @@ public class DataManager : Singleton<DataManager>
         }
         return default(CookieData);
     }
+
+    public Dictionary<int, InventoryData> GetAllHaveCookieData()
+    {
+        return _inventoryDatas;
+    }
     public List<CookieData> GetAllCookieData()
     {
         List<CookieData> list = new List<CookieData>();
@@ -140,6 +158,33 @@ public class DataManager : Singleton<DataManager>
         LoadStageData();
         LoadCookieData();
         LoadCharacterData();
+        LoadInventoryData();
+    }
+
+    private void LoadInventoryData()
+    {
+        TextAsset textAsset = Resources.Load<TextAsset>("Tables/InventoryTable");
+
+        if (textAsset == null)
+        {
+            Debug.LogError("WorldTable not found in Resources/Tables.");
+            return;
+        }
+        string[] lines = textAsset.text.Split("\r\n");
+
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] datas = lines[i].Split(',');
+            if (datas.Length <= 1) continue;
+            InventoryData data;
+            data.Key = int.Parse(datas[0]);
+            data.Type = int.Parse(datas[1]);
+            data.Name = datas[2];
+            data.Level = int.Parse(datas[3]);
+            data.Defense = float.Parse(datas[4]);
+
+            _inventoryDatas.Add(data.Key, data);
+        }
     }
 
     private void LoadCharacterData()
