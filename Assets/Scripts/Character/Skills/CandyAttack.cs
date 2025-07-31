@@ -3,7 +3,7 @@ using Spine.Unity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CandyAttack : Skill
+public class BaseAttack : Skill
 {
 
     
@@ -24,11 +24,11 @@ public class CandyAttack : Skill
     public override void Execute()
     {
 
-        print("BaseSkill");
+        print("CandyAttack");
         int key = _character.CharData.Key;
         CharacterAnimationData data = _characterAnimations.GetAnimationData(key);
-        string clip = data.skill1;
-
+        string clip = data.skill2;
+        print(clip);
         _animation.AnimationState.SetAnimation(0, clip, false);
         _animation.AnimationState.Complete -= OnComplete;
         _animation.AnimationState.Complete += OnComplete;

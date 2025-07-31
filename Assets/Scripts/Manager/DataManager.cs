@@ -87,7 +87,7 @@ public class DataManager : Singleton<DataManager>
     public static Dictionary<int, System.Type> skillMap = new Dictionary<int, System.Type>
     {
         { 101, typeof(BaseAttack) },
-//        { 102, typeof(Charge) },
+        { 102, typeof(CandyAttack) },
     };
 
 

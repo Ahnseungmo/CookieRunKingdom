@@ -29,6 +29,7 @@ public class BattleCookie : Character
             _range = 3.0f;
         }
         _skill1 = (Skill)gameObject.AddComponent(DataManager.skillMap[CharData.Skill1]);
+        _skill2 = (Skill)gameObject.AddComponent(DataManager.skillMap[CharData.Skill2]);
         _speed = CharData.Speed;
 
 
@@ -68,7 +69,10 @@ public class BattleCookie : Character
         
         }
         */
-
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UseSkill();
+        }
         if (State == CharState.Run || State == CharState.Idle)
         {
             Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, 5);
@@ -162,4 +166,10 @@ public class BattleCookie : Character
 
 
     }
+    public void UseSkill()
+    {
+        State = CharState.Skill2;
+        _skill2.Execute();
+    }
+
 }
