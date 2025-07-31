@@ -9,8 +9,8 @@ public class ButtonClickEvent: MonoBehaviour
         CharacterManager.Instance.ResetAll();
     }
 
-    public void OnClickSorting()
+    public void OnClickStart()
     {
-        //정렬버튼 만들기
+        //씬전환
     }
 }
