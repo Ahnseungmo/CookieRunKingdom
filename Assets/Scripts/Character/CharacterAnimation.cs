@@ -58,7 +58,7 @@ public class CharacterAnimation : MonoBehaviour
         key = _character.CharData.Key;
         print(key);
         CharacterAnimationData data = characterAnimations.GetAnimationData(key);
-
+        animationKey.Clear();
         animationKey.Add(CharState.Idle, data.idle);
         animationKey.Add(CharState.Skill1, data.skill1);
         animationKey.Add(CharState.Skill2, data.skill2);

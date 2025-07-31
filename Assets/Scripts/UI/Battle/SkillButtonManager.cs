@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +9,11 @@ public class SkillButtonManager : MonoBehaviour
 
     void Start()
     {
-        DataManager.Instance.LoadAllData();
 
-        // ★ 전체 캐릭터 데이터 기준으로 버튼 생성 ★
-        List<CharacterData> charList = DataManager.Instance.GetAllCharacterData();
-        for (int i = 0; i < charList.Count; ++i)
+        List<CharacterData> allCharacters = DataManager.Instance.GetAllCharacterData();
+        for (int i = 0; i < allCharacters.Count; ++i)
         {
-            CharacterData charData = charList[i];
+            CharacterData charData = allCharacters[i];
 
             // 빈 슬롯 체크(필요시, 아니면 생략 가능)
             if (charData.Key <= 0) continue;

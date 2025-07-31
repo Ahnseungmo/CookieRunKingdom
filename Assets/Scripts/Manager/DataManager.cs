@@ -199,7 +199,7 @@ public class DataManager : Singleton<DataManager>
         }
         string[] lines = textAsset.text.Split("\r\n");
 
-        for (int i = 2; i < lines.Length; i++)
+        for (int i = 1; i < lines.Length; i++)
         {
             string[] datas = lines[i].Split(',');
             if (datas.Length <=1) continue;

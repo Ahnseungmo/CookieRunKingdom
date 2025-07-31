@@ -17,7 +17,8 @@ public class BattleCharacter : Character
     float range;
     float speed = 1.0f;
 
-
+    private Vector3 moveDir = Vector3.zero;
+    private bool useMoveDir = false;
     private void Awake()
     {
 
@@ -63,6 +64,11 @@ public class BattleCharacter : Character
 
         }
 
+    }
+    public void SetMoveDirection(Vector3 direction)
+    {
+        moveDir = direction.normalized;
+        useMoveDir = true;
     }
     private void Move()
     {
