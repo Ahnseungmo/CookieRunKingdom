@@ -7,6 +7,13 @@ public class CharacterAnimationData
 {
     public int key;
     public SkeletonDataAsset skeletonDataAsset;
+    public string idle;
+    public string run;
+    public string victory;
+    public string lose;
+    public string skill1;
+    public string skill2;
+    public string skill3;
 }
 
 [CreateAssetMenu(fileName = "CharacterAnimations", menuName = "Scriptable Objects/CharacterAnimations")]
@@ -15,15 +22,18 @@ public class CharacterAnimations : ScriptableObject
     [SerializeField]
     private List<CharacterAnimationData> animationList = new List<CharacterAnimationData>();
 
-    private Dictionary<int, SkeletonDataAsset> _animationDict;
+    private Dictionary<int, CharacterAnimationData> _animationDict;
 
     public void Init()
     {
-        _animationDict = new Dictionary<int, SkeletonDataAsset>();
-        foreach (var data in animationList)
+        if (_animationDict == null)
         {
-            if (!_animationDict.ContainsKey(data.key))
-                _animationDict.Add(data.key, data.skeletonDataAsset);
+            _animationDict = new Dictionary<int, CharacterAnimationData>();
+            foreach (var data in animationList)
+            {
+                if (!_animationDict.ContainsKey(data.key))
+                    _animationDict.Add(data.key, data);
+            }
         }
     }
 
@@ -31,6 +41,12 @@ public class CharacterAnimations : ScriptableObject
     {
         if (_animationDict == null) Init();
         _animationDict.TryGetValue(key, out var anim);
-        return anim;
+        return anim.skeletonDataAsset;
+    }
+    public CharacterAnimationData GetAnimationData(int key)
+    {
+        if (_animationDict == null) Init();
+        _animationDict.TryGetValue(key, out var animData);
+        return animData;
     }
 }

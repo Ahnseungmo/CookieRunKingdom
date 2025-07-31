@@ -15,13 +15,55 @@ MonoBehaviour:
   animationList:
   - key: 1001
     skeletonDataAsset: {fileID: 11400000, guid: f47a014c9f4f4af42b9237caec4a4abf, type: 2}
+    idle: battle_idle_back
+    run: run_back
+    victory: joy
+    lose: lose
+    skill1: skill1_back
+    skill2: skill2_loop_back
+    skill3: 
   - key: 1002
     skeletonDataAsset: {fileID: 11400000, guid: a2d78c92c48a22e42957564eed42083c, type: 2}
+    idle: battle_idle_back
+    run: run_back
+    victory: joy
+    lose: lose
+    skill1: skill1_back
+    skill2: skill2_back
+    skill3: 
   - key: 1003
     skeletonDataAsset: {fileID: 11400000, guid: 5fb3f13d63881354d89f9ca1eb00dad4, type: 2}
+    idle: battle_idle_back
+    run: run_back
+    victory: joy
+    lose: lose
+    skill1: skill1_back
+    skill2: skill2_back
+    skill3: 
   - key: 1004
     skeletonDataAsset: {fileID: 11400000, guid: 7f63c316721cf8646ba9fea4d54a2c72, type: 2}
+    idle: battle_idle_back
+    run: run_back
+    victory: joy
+    lose: lose
+    skill1: skill1_back
+    skill2: skill2_back
+    skill3: 
   - key: 1005
     skeletonDataAsset: {fileID: 11400000, guid: 6a5203d900ee26245a293c7347a21df7, type: 2}
+    idle: battle_idle_back
+    run: run_back
+    victory: joy
+    lose: lose
+    skill1: skill1_back
+    skill2: skill2_start_back
+    skill3: 
   - key: 2001
     skeletonDataAsset: {fileID: 11400000, guid: 6e19bf2837de8d94abc84f3a24422bd8, type: 2}
+    idle: battle_idle
+    run: run
+    victory: 
+    lose: 
+    skill1: skill1
+    skill2: 
+    skill3: 

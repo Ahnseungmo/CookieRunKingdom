@@ -10,6 +10,8 @@ public class BattleCookie : Character
     private float _attackTimer = 0.0f;
     private Skill _skill1;
     private Skill _skill2;
+
+    GameObject _target;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,11 +30,16 @@ public class BattleCookie : Character
         }
         _skill1 = (Skill)gameObject.AddComponent(DataManager.skillMap[CharData.Skill1]);
         _speed = CharData.Speed;
+
+
+        print(_range);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        /*
         if(State == CharState.Move || State == CharState.Idle)
         {
             Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, _range);
@@ -40,7 +47,7 @@ public class BattleCookie : Character
             bool findTarget = false;
             foreach (Collider2D target in targets)
             {
-                if (target.CompareTag("Enemy"))
+                if (target.CompareTag("Player"))
                 {
                     findTarget = true;
                     break;
@@ -60,18 +67,71 @@ public class BattleCookie : Character
                 break;
         
         }
+        */
+
+        if (State == CharState.Run || State == CharState.Idle)
+        {
+            Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, 5);
+            bool findTarget = false;
+            _target = null;
+            float distance = 10;
+            foreach (Collider2D target in targets)
+            {
+                if (target.CompareTag("Enemy"))
+                {
+                    float targetDistance = Vector3.Distance(target.transform.position, transform.position);
+                    if (distance > targetDistance)
+                    {
+                        distance = targetDistance;
+                        _target = target.gameObject;
+                    }
+                    findTarget = true;
+                    break;
+                }
+            }
+
+            if (findTarget)
+            {
+
+
+                if (distance < _range)
+                {
+                    State = CharState.Idle;
+                    Idle();
+                }
+                else
+                {
+                    State = CharState.Run;
+                    Chase();
+                }
+            }
+            else
+            {
+                State = CharState.Run;
+                Move();
+            }
+
+        }
+
 
     }
     private void Move()
     {
         Vector3 movedir = (new Vector3(1, 0.5f, 0)).normalized;
         transform.Translate(movedir * _speed * Time.deltaTime);
-
+        /*
         if (_basePos != null)
         {
             Vector3 dir = (_basePos.transform.position - transform.position).normalized;
             transform.Translate(dir * _speed * Time.deltaTime);
         }
+        */
+    }
+
+    private void Chase()
+    {
+        Vector3 movedir = (_target.transform.position - transform.position).normalized;
+        transform.Translate(movedir * _speed * Time.deltaTime);
     }
     private void Idle()
     {
@@ -90,7 +150,7 @@ public class BattleCookie : Character
     private void Skill1()
     {
         //print("skill1");
-        State = CharState.Attack;
+        State = CharState.Skill1;
         _skill1.Execute();
     }
 

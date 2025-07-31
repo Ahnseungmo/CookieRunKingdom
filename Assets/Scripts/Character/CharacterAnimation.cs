@@ -27,6 +27,9 @@ public class CharacterAnimation : MonoBehaviour
 
 
         Init();
+
+
+        /*
         if (_character.CompareTag("Player"))
         {
             animationKey.Add(CharState.Idle, "battle_idle_back");
@@ -45,6 +48,7 @@ public class CharacterAnimation : MonoBehaviour
             animationKey.Add(CharState.Move, "run");
 
         }
+        */
 
     }
 
@@ -53,21 +57,41 @@ public class CharacterAnimation : MonoBehaviour
         _character = GetComponent<Character>();
         key = _character.CharData.Key;
         print(key);
+        CharacterAnimationData data = characterAnimations.GetAnimationData(key);
 
+        animationKey.Add(CharState.Idle, data.idle);
+        animationKey.Add(CharState.Skill1, data.skill1);
+        animationKey.Add(CharState.Skill2, data.skill2);
+        animationKey.Add(CharState.Skill3, data.skill3);
+        animationKey.Add(CharState.Run, data.run);
+        animationKey.Add(CharState.Victory, data.victory);
+        animationKey.Add(CharState.Lose, data.lose);
+
+        animationKey.Add(CharState.Idle_front, "idle");
+ 
         _skeletonAnimation = GetComponent<SkeletonAnimation>();
-
 
         _skeletonDataAsset = characterAnimations.GetAnimation(key);
         _skeletonAnimation.skeletonDataAsset = _skeletonDataAsset;
         _skeletonAnimation.Initialize(true);
         state = _skeletonAnimation.AnimationState;
 
+
+        if (key < 2000)
+        {
+            transform.GetComponent<MeshRenderer>().sortingOrder = 1;
+        }
+        else
+        {
+            transform.GetComponent<MeshRenderer>().sortingOrder = 0;
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _charState = _character.State;
-        state.SetAnimation(0, animationKey[_charState], true);
+        state.SetAnimation(0, animationKey[CharState.Idle], true);
+        //        state.SetAnimation(0, animationKey[_charState], true);
 
     }
 
@@ -89,7 +113,7 @@ public class CharacterAnimation : MonoBehaviour
                 case CharState.Idle:
                 case CharState.Victory:
                 case CharState.Lose:
-                case CharState.Move:
+                case CharState.Run:
                 case CharState.Idle_front:
                     state.SetAnimation(0, animationKey[_charState], true);
                     _isLoop = true;

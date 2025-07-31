@@ -38,7 +38,7 @@ public class BattleCharacter : Character
     void Update()
     {
         print(State);
-        if (State == CharState.Attack || State == CharState.Skill) return;
+//        if (State == CharState.Attack || State == CharState.Skill) return;
 
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, range);
         foreach (Collider2D target in targets)
@@ -57,7 +57,7 @@ public class BattleCharacter : Character
 
     private void Attack()
     {
-        State = CharState.Attack;
+//        State = CharState.Attack;
         if (CharData.Type == 1)
         {
 
@@ -66,7 +66,7 @@ public class BattleCharacter : Character
     }
     private void Move()
     {
-        State = CharState.Move;
+//        State = CharState.Move;
 
         Vector3 direction = (basePos - transform.position).normalized;
         transform.Translate(direction * speed);

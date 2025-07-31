@@ -68,9 +68,10 @@ public struct StageData
 public enum CharState
 {
     Idle,
-    Move,
-    Attack,
-    Skill,
+    Run,
+    Skill1,
+    Skill2,
+    Skill3,
     Idle_front,
     Victory,
     Lose

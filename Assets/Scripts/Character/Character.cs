@@ -68,8 +68,10 @@ public class Character : MonoBehaviour
         targer.HitDamage(damage);
     }
 
-    public void HealTarget(Character targer,float heal)
+    public void HealTarget(Character targer, float heal)
     {
         targer.HitHeal(heal);
     }
+
+  
 }
