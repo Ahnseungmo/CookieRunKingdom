@@ -15,6 +15,8 @@ public struct CharacterData
     public float Cooltime;
     public string Grade;
     public string SkillName;
+    public int Skill1;
+    public int Skill2;
 }
 public struct CookieData
 {
@@ -68,6 +70,11 @@ public class DataManager : Singleton<DataManager>
 
     //캐릭터 구현필요
 
+    public static Dictionary<int, System.Type> skillMap = new Dictionary<int, System.Type>
+    {
+        { 101, typeof(BaseAttack) },
+//        { 102, typeof(Charge) },
+    };
 
 
     private Dictionary<int, WorldData> _worldData = new Dictionary<int, WorldData>();
@@ -162,6 +169,9 @@ public class DataManager : Singleton<DataManager>
             data.Cooltime = float.Parse(datas[8]);
             data.Grade = datas[9];
             data.SkillName = datas[10];
+            data.Skill1 = int.Parse(datas[11]);
+            data.Skill2 = int.Parse(datas[12]);
+
             _characterDatas.Add(data.Key, data);
         }
     }

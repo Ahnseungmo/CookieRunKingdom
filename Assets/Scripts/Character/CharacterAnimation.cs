@@ -29,7 +29,7 @@ public class CharacterAnimation : MonoBehaviour
         Init();
         if (_character.CompareTag("Player"))
         {
-            animationKey.Add(CharState.Idle, "idle_back");
+            animationKey.Add(CharState.Idle, "battle_idle_back");
             animationKey.Add(CharState.Attack, "skill1_back");
             animationKey.Add(CharState.Move, "run_back");
             animationKey.Add(CharState.Skill, "skill2_loop_back");
@@ -38,7 +38,13 @@ public class CharacterAnimation : MonoBehaviour
             animationKey.Add(CharState.Lose, "lose");
 
         }
+        if (_character.CompareTag("Enemy"))
+        {
+            animationKey.Add(CharState.Idle, "battle_idle");
+            animationKey.Add(CharState.Attack, "skill1");
+            animationKey.Add(CharState.Move, "run");
 
+        }
 
     }
 
@@ -73,7 +79,7 @@ public class CharacterAnimation : MonoBehaviour
             Init();
             _charState = 0;
         }
-        print(_charState);
+//        print(_charState);
 
         if(_charState != _character.State)
         {
@@ -88,7 +94,7 @@ public class CharacterAnimation : MonoBehaviour
                     state.SetAnimation(0, animationKey[_charState], true);
                     _isLoop = true;
                     break;
-
+                    /*
                 case CharState.Attack:
                 case CharState.Skill:
 
@@ -96,8 +102,15 @@ public class CharacterAnimation : MonoBehaviour
                     _isLoop = false;
                     state.Complete += OnComplete;
                        
-                    break;
+                    if(_charState == CharState.Attack)
+                    {
+//                        state.Complete += (BattleCharacter)_character.MeleAttack;
+                         
+                    }
 
+                   
+                    break;
+                     */
             }
 
         }

@@ -23,3 +23,5 @@ MonoBehaviour:
     skeletonDataAsset: {fileID: 11400000, guid: 7f63c316721cf8646ba9fea4d54a2c72, type: 2}
   - key: 1005
     skeletonDataAsset: {fileID: 11400000, guid: 6a5203d900ee26245a293c7347a21df7, type: 2}
+  - key: 2001
+    skeletonDataAsset: {fileID: 11400000, guid: 6e19bf2837de8d94abc84f3a24422bd8, type: 2}
