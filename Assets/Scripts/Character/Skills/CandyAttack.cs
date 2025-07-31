@@ -3,7 +3,7 @@ using Spine.Unity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BaseAttack : Skill
+public class CandyAttack : Skill
 {
 
     
