@@ -103,6 +103,14 @@ public class DataManager : Singleton<DataManager>
     {
         return _stageData;
     }
+    public StageData GetStageData(int key)
+    {
+        if (_stageData.TryGetValue(key, out StageData data))
+        {
+            return data;
+        }
+        return default(StageData);
+    }
     public CharacterData GetCharacterData(int key)
     {
         if( _characterDatas.TryGetValue(key,out CharacterData data))

@@ -6,53 +6,82 @@ public class BattleSceneManager : MonoBehaviour
     public GameObject battleCookiePrefab;
     public GameObject battleEnemyPrefab;
 
-    public Vector2 basePosition = new Vector2(-7f, -3f); // 가장 왼쪽 아래 기준점
-    public float cellOffsetX = 2.5f; // 칸 가로간격
-    public float cellOffsetY = 2.5f; // 칸 세로간격
+    // 쿠키 기준 위치/간격
+    public Vector2 cookieBasePosition = new Vector2(-7f, -3f); // 왼쪽 아래
+    public float cookieCellOffsetX = 2.5f;
+    public float cookieCellOffsetY = 2.5f;
+
+    // 몬스터 기준 위치/간격
+    public Vector2 enemyBasePosition = new Vector2(7f, 3f); // 오른쪽 위
+    public float enemyCellOffsetX = -2.5f;  // 왼쪽으로 이동(음수)
+    public float enemyCellOffsetY = -2.5f;  // 아래로 이동(음수)
+
+    public int stageKey = 1; // 현재 스테이지(임의값, 필요시 변수로)
+
     void Start()
     {
         DataManager.Instance.LoadAllData();
 
-        int[,] arr = CharacterManager.Instance.CharacterArr; // 3x3 캐릭터 배치 정보
-
+        // 1. 쿠키(플레이어) 3x3 진형 배치
+        int[,] arr = CharacterManager.Instance.CharacterArr;
         for (int y = 0; y < 3; y++)
         {
             for (int x = 0; x < 3; x++)
             {
                 int key = arr[y, x];
-                if (key == 0)
-                {
-                    continue; // 빈 칸이면 패스
-                }
-                else if (key == 1)
-                {
-                    CharacterData charData = DataManager.Instance.GetCharacterData(key);
+                if (key == 0) continue;
 
-                    // 각 칸에 맞는 월드 위치 계산
-                    Vector3 spawnPos = new Vector3(
-                        basePosition.x + x * cellOffsetX,
-                        basePosition.y + y * cellOffsetY,
-                        0);
+                CharacterData charData = DataManager.Instance.GetCharacterData(key);
 
-                    GameObject go = Instantiate(battleCookiePrefab, spawnPos, Quaternion.identity);
-                    BattleCookie cookie = go.GetComponent<BattleCookie>();
-                    cookie.CharData = charData;
+                Vector3 spawnPos = new Vector3(
+                    cookieBasePosition.x + x * cookieCellOffsetX,
+                    cookieBasePosition.y + y * cookieCellOffsetY,
+                    0);
 
-                    // 실제 등록!
-                    CharacterManager.Instance.RegisterCharacter(key, go);
+                GameObject go = Instantiate(battleCookiePrefab, spawnPos, Quaternion.identity);
+                BattleCookie cookie = go.GetComponent<BattleCookie>();
+                cookie.CharData = charData;
 
-                }
-                //else if (charData.Type == 2) // 몬스터(에너미)
-                //{
-                //    GameObject go = Instantiate(battleEnemyPrefab, monsterStartPos, Quaternion.identity);
-                //    BattleEnemy enemy = go.GetComponent<BattleEnemy>();
-                //    enemy.CharData = charData;
-                //    prefab = battleEnemyPrefab;
-                //    spawnPos = monsterStartPos;
-                //    moveDir = monsterMoveDir;
-                //    monsterStartPos.x -= monsterOffset;
-                //}
+                CharacterManager.Instance.RegisterCharacter(key, go);
             }
+        }
+
+        // 2. 몬스터(StageData 기반, 2차원 진형)
+        SpawnMonsterGrid(stageKey);
+    }
+
+    // 2차원 몬스터 진형 배치 (한줄에 3마리씩, 2~3줄)
+    void SpawnMonsterGrid(int stageKey)
+    {
+        StageData stageData = DataManager.Instance.GetStageData(stageKey);
+
+        // StageData에서 Wave 정보를 리스트로 추출
+        List<int> monsterKeys = new List<int>();
+        if (stageData.Wave1 != 0) monsterKeys.Add(stageData.Wave1);
+        if (stageData.Wave2 != 0) monsterKeys.Add(stageData.Wave2);
+        if (stageData.Wave3 != 0) monsterKeys.Add(stageData.Wave3);
+
+        int rowCount = 2; // 몬스터 행 수(2~3줄)
+        int colCount = 3; // 몬스터 한 줄에 3마리
+
+        for (int i = 0; i < monsterKeys.Count; i++)
+        {
+            int row = i / colCount;
+            int col = i % colCount;
+            int monsterKey = monsterKeys[i];
+
+            CharacterData monsterData = DataManager.Instance.GetCharacterData(monsterKey);
+
+            Vector3 spawnPos = new Vector3(
+                enemyBasePosition.x + col * enemyCellOffsetX,
+                enemyBasePosition.y + row * enemyCellOffsetY,
+                0);
+
+            GameObject go = Instantiate(battleEnemyPrefab, spawnPos, Quaternion.identity);
+            BattleEnemy enemy = go.GetComponent<BattleEnemy>();
+            enemy.CharData = monsterData;
+
+            // 필요시 몬스터매니저에 Register도 가능
         }
     }
 }
