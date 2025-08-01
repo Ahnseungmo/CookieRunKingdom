@@ -17,6 +17,7 @@ public struct Index2
 }
 public class CharacterManager : Singleton<CharacterManager>
 {
+    private Dictionary<int, GameObject> _characterObjects = new Dictionary<int, GameObject>();
     private HashSet<int> _setCharacterList = new HashSet<int>();
     private int _characterCount = 0;
     private int[,] _characterArr = new int[3,3];
@@ -30,6 +31,15 @@ public class CharacterManager : Singleton<CharacterManager>
         get { return _characterArr; }
     }
 
+    public void RegisterCharacter(int key, GameObject obj)
+    {
+        _characterObjects[key] = obj;
+    }
+    public GameObject GetCharacterObject(int key)
+    {
+        _characterObjects.TryGetValue(key, out var obj);
+        return obj;
+    }
     public bool SetCharacter(int key)
     {
         if (_characterCount == 5) return false;

@@ -28,30 +28,57 @@ public class BackGround : MonoBehaviour
     {
         Vector3 delta = moveDir * moveSpeed * Time.deltaTime;
 
-        // 카메라는 앞으로
-        if (mainCamera != null)
-            mainCamera.transform.position += new Vector3(delta.x, delta.y, 0);
+        // 1. 맨 앞줄(0번째 row)에서 제일 왼쪽부터 캐릭터 찾기
+        int[,] arr = CharacterManager.Instance.CharacterArr;
+        int leaderKey = 0;
+        for (int x = 0; x < arr.GetLength(1); x++)
+        {
+            if (arr[0, x] != 0)
+            {
+                leaderKey = arr[0, x];
+                break;
+            }
+        }
 
-        // 배경은 뒤로
+        Vector3 camTarget = mainCamera.transform.position;
+
+        if (leaderKey != 0)
+        {
+            GameObject leaderObj = CharacterManager.Instance.GetCharacterObject(leaderKey);
+            if (leaderObj != null)
+            {
+                Vector3 leaderPos = leaderObj.transform.position;
+
+                Vector3 offset = new Vector3(2f, 1f, 0); // 원하는 오프셋
+                camTarget = leaderPos + offset;
+
+                camTarget.z = mainCamera.transform.position.z;
+            }
+        }
+        else
+        {
+            camTarget = mainCamera.transform.position + new Vector3(delta.x, delta.y, 0);
+        }
+
+        if (mainCamera != null)
+            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, camTarget, 7f * Time.deltaTime);
+
         for (int i = 0; i < tilemaps.Length; i++)
             tilemaps[i].position -= delta;
 
-        // 루프 체크 (정확한 공식!)
         for (int i = 0; i < tilemaps.Length; i++)
         {
             Transform cur = tilemaps[i];
             Transform other = tilemaps[(i + 1) % tilemaps.Length];
-
-            // 카메라 기준 진행방향 "뒤(-moveDir)"로 loopOffset만큼 벗어났을 때만!
             float distFromCam = Vector3.Dot(cur.position - mainCamera.transform.position, -moveDir);
 
             if (distFromCam > loopOffset.magnitude * 0.95f)
             {
-                // 다른 타일맵의 "앞쪽"으로 loopOffset만큼 이동
                 cur.position = other.position + loopOffset;
                 Debug.Log($"[Loop] Move tilemap {i} to {cur.position}");
             }
         }
     }
+
 
 }

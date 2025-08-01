@@ -16,21 +16,30 @@ public class SkillManager : Singleton<SkillManager>
         }
     }
 
-    private Dictionary<string, Func<Skills>> _skillFactory = new Dictionary<string, Func<Skills>>()
+    // 스킬명 → Type 매핑
+    private Dictionary<string, Type> _skillTypeMap = new Dictionary<string, Type>()
     {
-        {"WideHeal", () => new WideHeal()},
-        // 필요하면 다른 스킬 추가
+        { "WideHeal", typeof(WideHeal) },
+        // 필요시 스킬 추가
     };
 
-    public Skills CreateSkill(string skillName, float coolTime)
+    // AddComponent 방식으로 Skill 생성
+    public Skill CreateSkill(string skillName, Character character)
     {
-        if (_skillFactory.TryGetValue(skillName, out var creator))
+        if (!_skillTypeMap.TryGetValue(skillName, out var skillType))
         {
-            Skills skill = creator();
-            skill.Init(skillName, coolTime);
-            return skill;
+            Debug.LogWarning($"SkillManager: {skillName} 스킬 타입 없음");
+            return null;
         }
-        Debug.LogWarning($"SkillManager: {skillName} 스킬 없음");
-        return null;
+
+        // 중복 AddComponent 방지
+        Skill existingSkill = character.GetComponent(skillType) as Skill;
+        if (existingSkill != null)
+            return existingSkill;
+
+        // AddComponent로 Skill 붙이기
+        Skill skill = character.gameObject.AddComponent(skillType) as Skill;
+        // 필요하면 skill.Init(character) 등 추가 세팅
+        return skill;
     }
 }
