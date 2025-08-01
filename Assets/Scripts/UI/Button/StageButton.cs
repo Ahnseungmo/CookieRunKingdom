@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageButton: ParentButton
 {
@@ -29,5 +30,8 @@ public class StageButton: ParentButton
         if (!_data.IsUnlock) return;
 
         print(_data.Stage); // 스테이지 정보 gameManager로 넘기고 씬 넘겨주기
+        WorldDataManager.Instance.StageKey = _data.Key;
+        GameManager.Instance.PreScene = "StageScene";
+        SceneManager.LoadScene("CharacterSettingScene");
     }
 }

@@ -8,7 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 public class Character : MonoBehaviour
 {
     [SerializeField]
-    private CharState _state;
+    protected CharState _state;
     public CharState State { get { return _state; } set { _state = value; } }
     private float _maxHp;
 

@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    private string _preScene;
+    public string PreScene
+    {
+        get { return _preScene; }
+        set { _preScene = value; }
+    }
     //스테이지 시작하면 스테이지매니저 부르기
     private void Awake()
     {

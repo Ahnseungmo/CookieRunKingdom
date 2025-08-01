@@ -32,6 +32,9 @@ public class CookieSettingManager : MonoBehaviour
         GameObject obj = _cookies.Pop();
         PanelCharacter cookie = obj.GetComponent<PanelCharacter>();
         cookie.Key = key;
+        CharacterAnimation anim = obj.GetComponent<CharacterAnimation>();
+        if (anim != null)
+            anim.enabled = true;
 
         List<GameObject> cookies = _cookies.GetAllToActiveTrue();
         AllCookiePositionSetting(cookies);

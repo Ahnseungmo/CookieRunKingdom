@@ -8,16 +8,17 @@ using static UnityEngine.GraphicsBuffer;
 public class PanelCharacter : Character
 {
     private int _key;
-
+    
     public int Key
     {
         get { return _key; }
         set
         {
             _key = value;
-            CharacterData characterData = new CharacterData();
-            characterData.Key = _key;
+            CharacterData characterData = DataManager.Instance.GetCharacterData(_key);
             CharData = characterData;
+            _state = new CharState();
+            _state = CharState.Idle;
         }
     }
 

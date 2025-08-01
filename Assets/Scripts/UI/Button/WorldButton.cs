@@ -12,6 +12,7 @@ public class WorldButton : ParentButton
     protected override void OnButtonClick()
     {
        WorldDataManager.Instance.WorldKey = _data.Key;
+        GameManager.Instance.PreScene = "LobyScene";
         SceneManager.LoadScene("StageScene");
     }
 }
