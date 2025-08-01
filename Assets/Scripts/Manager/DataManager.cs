@@ -151,13 +151,18 @@ public class DataManager : Singleton<DataManager>
         return list;
     }
 
+    private bool _isLoaded = false;
     public void LoadAllData()
     {
-        LoadWorldData();
-        LoadStageData();
-        LoadCookieData();
-        LoadCharacterData();
-        LoadInventoryData();
+        if (_isLoaded) return; // 이미 한 번 로드했으면 패스
+        _isLoaded = true;
+        {
+            LoadWorldData();
+            LoadStageData();
+            LoadCookieData();
+            LoadCharacterData();
+            LoadInventoryData();
+        }
     }
 
     private void LoadInventoryData()
