@@ -94,24 +94,14 @@ public class DataManager : Singleton<DataManager>
     private Dictionary<int, WorldData> _worldData = new Dictionary<int, WorldData>();
     private Dictionary<int, StageData> _stageData = new Dictionary<int, StageData>();
 
-    public WorldData GetWorldData(int key)
+    public Dictionary<int, WorldData> GetAllWorldData()
     {
-        if (_worldData.TryGetValue(key, out WorldData data))
-        {
-            return data;
-        }
-
-        return default(WorldData);
+        return _worldData;
     }
 
-    public StageData GetStageData(int key)
+    public Dictionary<int, StageData> GetAllStageData()
     {
-        if (_stageData.TryGetValue(key, out StageData data))
-        {
-            return data;
-        }
-
-        return default(StageData);
+        return _stageData;
     }
     public CharacterData GetCharacterData(int key)
     {

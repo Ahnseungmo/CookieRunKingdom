@@ -5,9 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 5da61a757b5eb4844a171ca11ae690f8
+  - enabled: 1
+    path: Assets/Scenes/LobyScene.unity
+    guid: 52dff2afcb6403241ae2768ec22e6c1d
+  - enabled: 0
+    path: Assets/Scenes/CharecterTestScene.unity
+    guid: 8c76af2b3e12245488f37dc4a1ce3869
+  - enabled: 1
+    path: Assets/Scenes/CharacterGachaScene.unity
+    guid: 8d5df4d5f532fc645ba03bbf8c39ba66
+  - enabled: 1
+    path: Assets/Scenes/CharacterSettingScene.unity
+    guid: 327010d459f8e07459e3358cc791a48d
+  - enabled: 1
+    path: Assets/Scenes/GamePlayScene.unity
+    guid: 49fc1645d6121cf479c4cf8e56f0543f
+  - enabled: 1
+    path: Assets/Scenes/StageScene.unity
+    guid: bf2074f400bfebe409244122b78d8de9
+  - enabled: 1
+    path: Assets/Scenes/GameEndingScene.unity
+    guid: 879c92e2e2b49934bbdf9abbaf220dce
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -7,5 +7,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         DataManager.Instance.LoadAllData();
         InventoryManager.Instance.SetData();
+        WorldDataManager.Instance.SetData();
     }
 }

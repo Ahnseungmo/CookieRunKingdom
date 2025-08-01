@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonClickEvent: MonoBehaviour
 {
@@ -9,8 +10,17 @@ public class ButtonClickEvent: MonoBehaviour
         CharacterManager.Instance.ResetAll();
     }
 
-    public void OnClickSorting()
+    public void OnClickStart()
     {
-        //정렬버튼 만들기
+        //씬전환
+        SceneManager.LoadScene("LobyScene");
+    }
+    public void OnClickWorldButton()
+    {
+        SceneManager.LoadScene("StageScene");
+    }
+    public void OnClickGachaButton()
+    {
+        SceneManager.LoadScene("CharacterGachaScene");
     }
 }

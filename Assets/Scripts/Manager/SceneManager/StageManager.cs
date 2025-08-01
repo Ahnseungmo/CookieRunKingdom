@@ -13,7 +13,7 @@ public class StageManager: MonoBehaviour
     private void Init(int stageNum)
     {
         _buttonParent = GameObject.Find("Buttons");
-        _worldData = DataManager.Instance.GetWorldData(stageNum);
+        _worldData = WorldDataManager.Instance.GetWorldData();
         
         CreateStageButtons(); // 풀링으로 셋팅후에 켜주기 (이때, 정보 넘겨서 정보 셋팅하기)
         ChangeBackGround();
@@ -26,7 +26,7 @@ public class StageManager: MonoBehaviour
         for(int i = 1; i <= _worldData.StageNum; i++)
         {
             StageButton obj = _stageButtons.Pop().GetComponent<StageButton>();
-            obj.Data = DataManager.Instance.GetStageData(_worldData.Key + i);
+            obj.Data = WorldDataManager.Instance.GetStageData(_worldData.Key + i);
             obj.SetInformation();
         }
     }
