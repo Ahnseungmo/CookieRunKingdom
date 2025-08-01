@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class BattleSceneManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class BattleSceneManager : MonoBehaviour
 
     public int stageKey = 1; // 현재 스테이지(임의값, 필요시 변수로)
 
+    private bool _isEnd = false;
+    private float _timer = 0.0f;
     void Start()
     {
         DataManager.Instance.LoadAllData();
@@ -50,6 +54,14 @@ public class BattleSceneManager : MonoBehaviour
         SpawnMonsterGrid(stageKey);
     }
 
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+        if(_timer>10.0f)
+        {
+            SceneManager.LoadScene("GameEndingScene");
+        }
+    }
     // 2차원 몬스터 진형 배치 (한줄에 3마리씩, 2~3줄)
     void SpawnMonsterGrid(int stageKey)
     {

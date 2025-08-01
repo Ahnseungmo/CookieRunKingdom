@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CookieSettingManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class CookieSettingManager : MonoBehaviour
     private bool _isSetting = false;
 
 
+    public void OnClickStart()
+    {
+        SceneManager.LoadScene("GamePlayScene");
+    }
     public void OnClickReset()
     {
         List<GameObject> button = _buttons.GetAllToActiveTrue();
