@@ -18,7 +18,7 @@ public class BattleSceneManager : MonoBehaviour
     public float enemyCellOffsetX = -2.5f;  // 왼쪽으로 이동(음수)
     public float enemyCellOffsetY = -2.5f;  // 아래로 이동(음수)
 
-    public int stageKey = 1; // 현재 스테이지(임의값, 필요시 변수로)
+    public int stageKey = 101; // 현재 스테이지(임의값, 필요시 변수로)
 
     private bool _isEnd = false;
     private float _timer = 0.0f;
@@ -57,7 +57,7 @@ public class BattleSceneManager : MonoBehaviour
     private void Update()
     {
         _timer += Time.deltaTime;
-        if(_timer>10.0f)
+        if(_timer>60.0f)
         {
             SceneManager.LoadScene("GameEndingScene");
         }
@@ -67,33 +67,36 @@ public class BattleSceneManager : MonoBehaviour
     {
         StageData stageData = DataManager.Instance.GetStageData(stageKey);
 
-        // StageData에서 Wave 정보를 리스트로 추출
-        List<int> monsterKeys = new List<int>();
-        if (stageData.Wave1 != 0) monsterKeys.Add(stageData.Wave1);
-        if (stageData.Wave2 != 0) monsterKeys.Add(stageData.Wave2);
-        if (stageData.Wave3 != 0) monsterKeys.Add(stageData.Wave3);
+        // 웨이브별 마릿수 배열
+        int[] waveCounts = new int[] { stageData.Wave1, stageData.Wave2, stageData.Wave3 };
 
-        int rowCount = 2; // 몬스터 행 수(2~3줄)
-        int colCount = 3; // 몬스터 한 줄에 3마리
+        int monsterKey = 2001; // 하드코딩 몬스터 key (예시)
 
-        for (int i = 0; i < monsterKeys.Count; i++)
+        int spawnIdx = 0;
+        int colCount = 3; // 한 줄에 3마리씩
+        for (int wave = 0; wave < waveCounts.Length; wave++)
         {
-            int row = i / colCount;
-            int col = i % colCount;
-            int monsterKey = monsterKeys[i];
+            int count = waveCounts[wave];
+            for (int i = 0; i < count; i++)
+            {
+                Debug.Log($"[몬스터 소환] 웨이브{wave + 1} / idx={i} / key=2001");
+                int row = spawnIdx / colCount;
+                int col = spawnIdx % colCount;
 
-            CharacterData monsterData = DataManager.Instance.GetCharacterData(monsterKey);
+                CharacterData monsterData = DataManager.Instance.GetCharacterData(monsterKey);
 
-            Vector3 spawnPos = new Vector3(
-                enemyBasePosition.x + col * enemyCellOffsetX,
-                enemyBasePosition.y + row * enemyCellOffsetY,
-                0);
+                Vector3 spawnPos = new Vector3(
+                    enemyBasePosition.x + col * enemyCellOffsetX,
+                    enemyBasePosition.y + row * enemyCellOffsetY,
+                    0);
 
-            GameObject go = Instantiate(battleEnemyPrefab, spawnPos, Quaternion.identity);
-            BattleEnemy enemy = go.GetComponent<BattleEnemy>();
-            enemy.CharData = monsterData;
+                GameObject go = Instantiate(battleEnemyPrefab, spawnPos, Quaternion.identity);
+                BattleEnemy enemy = go.GetComponent<BattleEnemy>();
+                enemy.CharData = monsterData;
 
-            // 필요시 몬스터매니저에 Register도 가능
+                spawnIdx++;
+            }
         }
     }
+
 }
