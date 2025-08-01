@@ -3,6 +3,12 @@ using UnityEngine;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     private string _preScene;
+    private bool _isWin = false;
+    public bool IsWin
+    {
+        get { return _isWin; }
+        set { _isWin = value; }
+    }
     public string PreScene
     {
         get { return _preScene; }

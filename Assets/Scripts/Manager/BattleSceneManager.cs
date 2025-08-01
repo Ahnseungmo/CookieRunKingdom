@@ -59,6 +59,7 @@ public class BattleSceneManager : MonoBehaviour
         _timer += Time.deltaTime;
         if(_timer>10.0f)
         {
+            GameManager.Instance.IsWin = true;
             SceneManager.LoadScene("GameEndingScene");
         }
     }

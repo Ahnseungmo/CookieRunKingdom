@@ -1,7 +1,7 @@
 key,type,name,hp,attack,deffen,critical,speed,cooltime,grade,skillname,skill1,skill2,skill3
-1001,1,Normal,100,50,30,0,50,10,Normal,WideHeal,101,102,
-1002,1,StrawBerry,100,50,50,0,50,11,Normal,?Œì§„,101,102,
-1003,1,Knight,100,50,10,0,50,12,Rare,?Œì§„,101,102,
+1001,1,Normal,100,50,30,0,50,10,Common,WideHeal,101,102,
+1002,1,StrawBerry,100,50,50,0,50,11,Common,?Œì§„,101,102,
+1003,1,Knight,100,50,10,0,50,12,Special,?Œì§„,101,102,
 1004,1,Angle,100,50,30,0,50,13,Rare,??,101,102,
 1005,1,Ninja,80,50,30,0,50,14,Rare,?Œì§„,101,102,
 2001,2,Monster,100,20,30,0,100,0,0,0,101,102,
